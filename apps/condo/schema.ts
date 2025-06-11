@@ -2883,7 +2883,7 @@ export type B2BApp = {
   /**  App can be marked with one of the following labels in order to visually stand out from other applications: [FREE, DISCOUNT, POPULAR, NEW]  */
   label?: Maybe<B2BAppLabelType>;
   /**  Logo of app's company or app itself  */
-  logo?: Maybe<File>;
+  logo?: Maybe<CustomFile>;
   /**  This field is responsible for which category of the CRM menu the application icon will fall into when connected. If not specified - then connected with the icon will be displayed in category "MINIAPPS" by default.  */
   menuCategory?: Maybe<B2BAppMenuCategoryType>;
   /**  Name of B2B App  */
@@ -4487,7 +4487,7 @@ export type B2BAppCreateInput = {
   isHidden?: InputMaybe<Scalars['Boolean']['input']>;
   isPublic?: InputMaybe<Scalars['Boolean']['input']>;
   label?: InputMaybe<B2BAppLabelType>;
-  logo?: InputMaybe<Scalars['Upload']['input']>;
+  logo?: InputMaybe<Scalars['CustomUpload']['input']>;
   menuCategory?: InputMaybe<B2BAppMenuCategoryType>;
   name?: InputMaybe<Scalars['String']['input']>;
   newId?: InputMaybe<Scalars['String']['input']>;
@@ -6104,7 +6104,7 @@ export type B2BAppPromoBlock = {
   /**  Background color of promo block. Can be hex code or linear gradient.  */
   backgroundColor?: Maybe<Scalars['String']['output']>;
   /**  PNG image which appears next to text on large devices  */
-  backgroundImage?: Maybe<File>;
+  backgroundImage?: Maybe<CustomFile>;
   createdAt?: Maybe<Scalars['String']['output']>;
   /**  Identifies a user, which has created this record. It is a technical connection, that can represent real users, as well as automated systems (bots, scripts). This field should not participate in business logic.  */
   createdBy?: Maybe<User>;
@@ -6135,7 +6135,7 @@ export type B2BAppPromoBlock = {
 
 export type B2BAppPromoBlockCreateInput = {
   backgroundColor?: InputMaybe<Scalars['String']['input']>;
-  backgroundImage?: InputMaybe<Scalars['Upload']['input']>;
+  backgroundImage?: InputMaybe<Scalars['CustomUpload']['input']>;
   createdAt?: InputMaybe<Scalars['String']['input']>;
   createdBy?: InputMaybe<UserRelateToOneInput>;
   deletedAt?: InputMaybe<Scalars['String']['input']>;
@@ -6444,7 +6444,7 @@ export enum B2BAppPromoBlockTextVariantType {
 
 export type B2BAppPromoBlockUpdateInput = {
   backgroundColor?: InputMaybe<Scalars['String']['input']>;
-  backgroundImage?: InputMaybe<Scalars['Upload']['input']>;
+  backgroundImage?: InputMaybe<Scalars['CustomUpload']['input']>;
   createdAt?: InputMaybe<Scalars['String']['input']>;
   createdBy?: InputMaybe<UserRelateToOneInput>;
   deletedAt?: InputMaybe<Scalars['String']['input']>;
@@ -6976,7 +6976,7 @@ export type B2BAppUpdateInput = {
   isHidden?: InputMaybe<Scalars['Boolean']['input']>;
   isPublic?: InputMaybe<Scalars['Boolean']['input']>;
   label?: InputMaybe<B2BAppLabelType>;
-  logo?: InputMaybe<Scalars['Upload']['input']>;
+  logo?: InputMaybe<Scalars['CustomUpload']['input']>;
   menuCategory?: InputMaybe<B2BAppMenuCategoryType>;
   name?: InputMaybe<Scalars['String']['input']>;
   newId?: InputMaybe<Scalars['String']['input']>;
@@ -7279,7 +7279,7 @@ export type B2CApp = {
   /**  Indicates whether the integration or app is hidden inside the CRM. Used if integration is active by default or not ready to appear inside CRM  */
   isHidden?: Maybe<Scalars['Boolean']['output']>;
   /**  Logo of app's company or app itself  */
-  logo?: Maybe<File>;
+  logo?: Maybe<CustomFile>;
   /**  Name of B2C App  */
   name?: Maybe<Scalars['String']['output']>;
   newId?: Maybe<Scalars['String']['output']>;
@@ -7732,7 +7732,7 @@ export type B2CAppBuild = {
   /**  Identifies a user, which has created this record. It is a technical connection, that can represent real users, as well as automated systems (bots, scripts). This field should not participate in business logic.  */
   createdBy?: Maybe<User>;
   /**  B2C app cordova build compressed to single .zip file  */
-  data?: Maybe<File>;
+  data?: Maybe<CustomFile>;
   deletedAt?: Maybe<Scalars['String']['output']>;
   /**  Data structure Version  */
   dv?: Maybe<Scalars['Int']['output']>;
@@ -7756,7 +7756,7 @@ export type B2CAppBuildCreateInput = {
   app?: InputMaybe<B2CAppRelateToOneInput>;
   createdAt?: InputMaybe<Scalars['String']['input']>;
   createdBy?: InputMaybe<UserRelateToOneInput>;
-  data?: InputMaybe<Scalars['Upload']['input']>;
+  data?: InputMaybe<Scalars['CustomUpload']['input']>;
   deletedAt?: InputMaybe<Scalars['String']['input']>;
   dv?: InputMaybe<Scalars['Int']['input']>;
   importId?: InputMaybe<Scalars['String']['input']>;
@@ -8013,7 +8013,7 @@ export type B2CAppBuildUpdateInput = {
   app?: InputMaybe<B2CAppRelateToOneInput>;
   createdAt?: InputMaybe<Scalars['String']['input']>;
   createdBy?: InputMaybe<UserRelateToOneInput>;
-  data?: InputMaybe<Scalars['Upload']['input']>;
+  data?: InputMaybe<Scalars['CustomUpload']['input']>;
   deletedAt?: InputMaybe<Scalars['String']['input']>;
   dv?: InputMaybe<Scalars['Int']['input']>;
   importId?: InputMaybe<Scalars['String']['input']>;
@@ -8172,7 +8172,7 @@ export type B2CAppCreateInput = {
   importId?: InputMaybe<Scalars['String']['input']>;
   importRemoteSystem?: InputMaybe<Scalars['String']['input']>;
   isHidden?: InputMaybe<Scalars['Boolean']['input']>;
-  logo?: InputMaybe<Scalars['Upload']['input']>;
+  logo?: InputMaybe<Scalars['CustomUpload']['input']>;
   name?: InputMaybe<Scalars['String']['input']>;
   newId?: InputMaybe<Scalars['String']['input']>;
   sender?: InputMaybe<SenderFieldInput>;
@@ -8898,7 +8898,7 @@ export type B2CAppUpdateInput = {
   importId?: InputMaybe<Scalars['String']['input']>;
   importRemoteSystem?: InputMaybe<Scalars['String']['input']>;
   isHidden?: InputMaybe<Scalars['Boolean']['input']>;
-  logo?: InputMaybe<Scalars['Upload']['input']>;
+  logo?: InputMaybe<Scalars['CustomUpload']['input']>;
   name?: InputMaybe<Scalars['String']['input']>;
   newId?: InputMaybe<Scalars['String']['input']>;
   sender?: InputMaybe<SenderFieldInput>;
@@ -13968,7 +13968,7 @@ export type BankSyncTask = {
   /**  Data structure Version  */
   dv?: Maybe<Scalars['Int']['output']>;
   /**  File from which transactions should be imported. Currently only 1CClientBankExchange format is supported  */
-  file?: Maybe<File>;
+  file?: Maybe<CustomFile>;
   id: Scalars['ID']['output'];
   /**  Integration context of account for which current synchronization operation is performed. Can be unknown when account and integration does not exist before import  */
   integrationContext?: Maybe<BankIntegrationAccountContext>;
@@ -14003,7 +14003,7 @@ export type BankSyncTaskCreateInput = {
   createdBy?: InputMaybe<UserRelateToOneInput>;
   deletedAt?: InputMaybe<Scalars['String']['input']>;
   dv?: InputMaybe<Scalars['Int']['input']>;
-  file?: InputMaybe<Scalars['Upload']['input']>;
+  file?: InputMaybe<Scalars['CustomUpload']['input']>;
   integrationContext?: InputMaybe<BankIntegrationAccountContextRelateToOneInput>;
   meta?: InputMaybe<Scalars['JSON']['input']>;
   newId?: InputMaybe<Scalars['String']['input']>;
@@ -14301,7 +14301,7 @@ export type BankSyncTaskUpdateInput = {
   createdBy?: InputMaybe<UserRelateToOneInput>;
   deletedAt?: InputMaybe<Scalars['String']['input']>;
   dv?: InputMaybe<Scalars['Int']['input']>;
-  file?: InputMaybe<Scalars['Upload']['input']>;
+  file?: InputMaybe<Scalars['CustomUpload']['input']>;
   integrationContext?: InputMaybe<BankIntegrationAccountContextRelateToOneInput>;
   meta?: InputMaybe<Scalars['JSON']['input']>;
   newId?: InputMaybe<Scalars['String']['input']>;
@@ -23352,7 +23352,7 @@ export type ContactExportTask = {
   /**  How many records at the moment are exported  */
   exportedRecordsCount?: Maybe<Scalars['Int']['output']>;
   /**  Meta information about file, saved outside of database somewhere. Shape of meta information JSON object is specific to file adapter, used by saving a file.  */
-  file?: Maybe<File>;
+  file?: Maybe<CustomFile>;
   /**  Requested export file format  */
   format?: Maybe<ContactExportTaskFormatType>;
   id: Scalars['ID']['output'];
@@ -23387,7 +23387,7 @@ export type ContactExportTaskCreateInput = {
   deletedAt?: InputMaybe<Scalars['String']['input']>;
   dv?: InputMaybe<Scalars['Int']['input']>;
   exportedRecordsCount?: InputMaybe<Scalars['Int']['input']>;
-  file?: InputMaybe<Scalars['Upload']['input']>;
+  file?: InputMaybe<Scalars['CustomUpload']['input']>;
   format?: InputMaybe<ContactExportTaskFormatType>;
   locale?: InputMaybe<Scalars['String']['input']>;
   meta?: InputMaybe<Scalars['JSON']['input']>;
@@ -23718,7 +23718,7 @@ export type ContactExportTaskUpdateInput = {
   deletedAt?: InputMaybe<Scalars['String']['input']>;
   dv?: InputMaybe<Scalars['Int']['input']>;
   exportedRecordsCount?: InputMaybe<Scalars['Int']['input']>;
-  file?: InputMaybe<Scalars['Upload']['input']>;
+  file?: InputMaybe<Scalars['CustomUpload']['input']>;
   format?: InputMaybe<ContactExportTaskFormatType>;
   locale?: InputMaybe<Scalars['String']['input']>;
   meta?: InputMaybe<Scalars['JSON']['input']>;
@@ -29416,7 +29416,7 @@ export type IncidentExportTask = {
   /**  How many records at the moment are exported  */
   exportedRecordsCount?: Maybe<Scalars['Int']['output']>;
   /**  Meta information about file, saved outside of database somewhere. Shape of meta information JSON object is specific to file adapter, used by saving a file.  */
-  file?: Maybe<File>;
+  file?: Maybe<CustomFile>;
   /**  Requested export file format  */
   format?: Maybe<IncidentExportTaskFormatType>;
   id: Scalars['ID']['output'];
@@ -29451,7 +29451,7 @@ export type IncidentExportTaskCreateInput = {
   deletedAt?: InputMaybe<Scalars['String']['input']>;
   dv?: InputMaybe<Scalars['Int']['input']>;
   exportedRecordsCount?: InputMaybe<Scalars['Int']['input']>;
-  file?: InputMaybe<Scalars['Upload']['input']>;
+  file?: InputMaybe<Scalars['CustomUpload']['input']>;
   format?: InputMaybe<IncidentExportTaskFormatType>;
   locale?: InputMaybe<Scalars['String']['input']>;
   meta?: InputMaybe<Scalars['JSON']['input']>;
@@ -29782,7 +29782,7 @@ export type IncidentExportTaskUpdateInput = {
   deletedAt?: InputMaybe<Scalars['String']['input']>;
   dv?: InputMaybe<Scalars['Int']['input']>;
   exportedRecordsCount?: InputMaybe<Scalars['Int']['input']>;
-  file?: InputMaybe<Scalars['Upload']['input']>;
+  file?: InputMaybe<Scalars['CustomUpload']['input']>;
   format?: InputMaybe<IncidentExportTaskFormatType>;
   locale?: InputMaybe<Scalars['String']['input']>;
   meta?: InputMaybe<Scalars['JSON']['input']>;
@@ -36880,7 +36880,7 @@ export type MeterReadingExportTask = {
   /**  How many records at the moment are exported  */
   exportedRecordsCount?: Maybe<Scalars['Int']['output']>;
   /**  Meta information about file, saved outside of database somewhere. Shape of meta information JSON object is specific to file adapter, used by saving a file.  */
-  file?: Maybe<File>;
+  file?: Maybe<CustomFile>;
   /**  Requested export file format  */
   format?: Maybe<MeterReadingExportTaskFormatType>;
   id: Scalars['ID']['output'];
@@ -36915,7 +36915,7 @@ export type MeterReadingExportTaskCreateInput = {
   deletedAt?: InputMaybe<Scalars['String']['input']>;
   dv?: InputMaybe<Scalars['Int']['input']>;
   exportedRecordsCount?: InputMaybe<Scalars['Int']['input']>;
-  file?: InputMaybe<Scalars['Upload']['input']>;
+  file?: InputMaybe<Scalars['CustomUpload']['input']>;
   format?: InputMaybe<MeterReadingExportTaskFormatType>;
   locale?: InputMaybe<MeterReadingExportTaskLocaleType>;
   meta?: InputMaybe<Scalars['JSON']['input']>;
@@ -37252,7 +37252,7 @@ export type MeterReadingExportTaskUpdateInput = {
   deletedAt?: InputMaybe<Scalars['String']['input']>;
   dv?: InputMaybe<Scalars['Int']['input']>;
   exportedRecordsCount?: InputMaybe<Scalars['Int']['input']>;
-  file?: InputMaybe<Scalars['Upload']['input']>;
+  file?: InputMaybe<Scalars['CustomUpload']['input']>;
   format?: InputMaybe<MeterReadingExportTaskFormatType>;
   locale?: InputMaybe<MeterReadingExportTaskLocaleType>;
   meta?: InputMaybe<Scalars['JSON']['input']>;
@@ -38786,11 +38786,11 @@ export type MeterReadingsImportTask = {
   /**  Data structure Version  */
   dv?: Maybe<Scalars['Int']['output']>;
   /**  Meta information about error file. Shape of meta information JSON object is specific to file adapter, used by saving a file.  */
-  errorFile?: Maybe<File>;
+  errorFile?: Maybe<CustomFile>;
   /**  Proceeding error information message  */
   errorMessage?: Maybe<Scalars['String']['output']>;
   /**  Meta information about file, saved outside of database somewhere. Shape of meta information JSON object is specific to file adapter, used by saving a file.  */
-  file?: Maybe<File>;
+  file?: Maybe<CustomFile>;
   /**  Requested import file format  */
   format?: Maybe<MeterReadingsImportTaskFormatType>;
   id: Scalars['ID']['output'];
@@ -38826,9 +38826,9 @@ export type MeterReadingsImportTaskCreateInput = {
   createdBy?: InputMaybe<UserRelateToOneInput>;
   deletedAt?: InputMaybe<Scalars['String']['input']>;
   dv?: InputMaybe<Scalars['Int']['input']>;
-  errorFile?: InputMaybe<Scalars['Upload']['input']>;
+  errorFile?: InputMaybe<Scalars['CustomUpload']['input']>;
   errorMessage?: InputMaybe<Scalars['String']['input']>;
-  file?: InputMaybe<Scalars['Upload']['input']>;
+  file?: InputMaybe<Scalars['CustomUpload']['input']>;
   format?: InputMaybe<MeterReadingsImportTaskFormatType>;
   importedRecordsCount?: InputMaybe<Scalars['Int']['input']>;
   isPropertyMeters?: InputMaybe<Scalars['Boolean']['input']>;
@@ -39176,9 +39176,9 @@ export type MeterReadingsImportTaskUpdateInput = {
   createdBy?: InputMaybe<UserRelateToOneInput>;
   deletedAt?: InputMaybe<Scalars['String']['input']>;
   dv?: InputMaybe<Scalars['Int']['input']>;
-  errorFile?: InputMaybe<Scalars['Upload']['input']>;
+  errorFile?: InputMaybe<Scalars['CustomUpload']['input']>;
   errorMessage?: InputMaybe<Scalars['String']['input']>;
-  file?: InputMaybe<Scalars['Upload']['input']>;
+  file?: InputMaybe<Scalars['CustomUpload']['input']>;
   format?: InputMaybe<MeterReadingsImportTaskFormatType>;
   importedRecordsCount?: InputMaybe<Scalars['Int']['input']>;
   isPropertyMeters?: InputMaybe<Scalars['Boolean']['input']>;
@@ -59440,7 +59440,7 @@ export type NewsItemRecipientsExportTask = {
   /**  Data structure Version  */
   dv?: Maybe<Scalars['Int']['output']>;
   /**  Meta information about file, saved outside of database somewhere. Shape of meta information JSON object is specific to file adapter, used by saving a file.  */
-  file?: Maybe<File>;
+  file?: Maybe<CustomFile>;
   id: Scalars['ID']['output'];
   newId?: Maybe<Scalars['String']['output']>;
   /**  The organization from which the recipients will be exported from  */
@@ -59464,7 +59464,7 @@ export type NewsItemRecipientsExportTaskCreateInput = {
   createdBy?: InputMaybe<UserRelateToOneInput>;
   deletedAt?: InputMaybe<Scalars['String']['input']>;
   dv?: InputMaybe<Scalars['Int']['input']>;
-  file?: InputMaybe<Scalars['Upload']['input']>;
+  file?: InputMaybe<Scalars['CustomUpload']['input']>;
   newId?: InputMaybe<Scalars['String']['input']>;
   organization?: InputMaybe<OrganizationRelateToOneInput>;
   scopes?: InputMaybe<Scalars['JSON']['input']>;
@@ -59693,7 +59693,7 @@ export type NewsItemRecipientsExportTaskUpdateInput = {
   createdBy?: InputMaybe<UserRelateToOneInput>;
   deletedAt?: InputMaybe<Scalars['String']['input']>;
   dv?: InputMaybe<Scalars['Int']['input']>;
-  file?: InputMaybe<Scalars['Upload']['input']>;
+  file?: InputMaybe<Scalars['CustomUpload']['input']>;
   newId?: InputMaybe<Scalars['String']['input']>;
   organization?: InputMaybe<OrganizationRelateToOneInput>;
   scopes?: InputMaybe<Scalars['JSON']['input']>;
@@ -67898,7 +67898,7 @@ export type PaymentsFile = {
   /**  Data structure Version  */
   dv?: Maybe<Scalars['Int']['output']>;
   /**  Payments registry file itself  */
-  file?: Maybe<File>;
+  file?: Maybe<CustomFile>;
   id: Scalars['ID']['output'];
   /**  Identifier of corresponding record in external system  */
   importId?: Maybe<Scalars['String']['output']>;
@@ -67940,7 +67940,7 @@ export type PaymentsFileCreateInput = {
   createdBy?: InputMaybe<UserRelateToOneInput>;
   deletedAt?: InputMaybe<Scalars['String']['input']>;
   dv?: InputMaybe<Scalars['Int']['input']>;
-  file?: InputMaybe<Scalars['Upload']['input']>;
+  file?: InputMaybe<Scalars['CustomUpload']['input']>;
   importId?: InputMaybe<Scalars['String']['input']>;
   loadedAt?: InputMaybe<Scalars['String']['input']>;
   name?: InputMaybe<Scalars['String']['input']>;
@@ -68355,7 +68355,7 @@ export type PaymentsFileUpdateInput = {
   createdBy?: InputMaybe<UserRelateToOneInput>;
   deletedAt?: InputMaybe<Scalars['String']['input']>;
   dv?: InputMaybe<Scalars['Int']['input']>;
-  file?: InputMaybe<Scalars['Upload']['input']>;
+  file?: InputMaybe<Scalars['CustomUpload']['input']>;
   importId?: InputMaybe<Scalars['String']['input']>;
   loadedAt?: InputMaybe<Scalars['String']['input']>;
   name?: InputMaybe<Scalars['String']['input']>;
@@ -99482,7 +99482,7 @@ export type TicketDocumentGenerationTask = {
   /**  Data structure Version  */
   dv?: Maybe<Scalars['Int']['output']>;
   /**  Meta information about file, saved outside of database somewhere. Shape of meta information JSON object is specific to file adapter, used by saving a file.  */
-  file?: Maybe<File>;
+  file?: Maybe<CustomFile>;
   /**  Output file format  */
   format?: Maybe<TicketDocumentGenerationTaskFormatType>;
   id: Scalars['ID']['output'];
@@ -99513,7 +99513,7 @@ export type TicketDocumentGenerationTaskCreateInput = {
   deletedAt?: InputMaybe<Scalars['String']['input']>;
   documentType?: InputMaybe<TicketDocumentGenerationTaskDocumentTypeType>;
   dv?: InputMaybe<Scalars['Int']['input']>;
-  file?: InputMaybe<Scalars['Upload']['input']>;
+  file?: InputMaybe<Scalars['CustomUpload']['input']>;
   format?: InputMaybe<TicketDocumentGenerationTaskFormatType>;
   meta?: InputMaybe<Scalars['JSON']['input']>;
   newId?: InputMaybe<Scalars['String']['input']>;
@@ -99829,7 +99829,7 @@ export type TicketDocumentGenerationTaskUpdateInput = {
   deletedAt?: InputMaybe<Scalars['String']['input']>;
   documentType?: InputMaybe<TicketDocumentGenerationTaskDocumentTypeType>;
   dv?: InputMaybe<Scalars['Int']['input']>;
-  file?: InputMaybe<Scalars['Upload']['input']>;
+  file?: InputMaybe<Scalars['CustomUpload']['input']>;
   format?: InputMaybe<TicketDocumentGenerationTaskFormatType>;
   meta?: InputMaybe<Scalars['JSON']['input']>;
   newId?: InputMaybe<Scalars['String']['input']>;
@@ -100005,7 +100005,7 @@ export type TicketExportTask = {
   /**  How many records at the moment are exported  */
   exportedRecordsCount?: Maybe<Scalars['Int']['output']>;
   /**  Meta information about file, saved outside of database somewhere. Shape of meta information JSON object is specific to file adapter, used by saving a file.  */
-  file?: Maybe<File>;
+  file?: Maybe<CustomFile>;
   /**  Requested export file format  */
   format?: Maybe<TicketExportTaskFormatType>;
   id: Scalars['ID']['output'];
@@ -100042,7 +100042,7 @@ export type TicketExportTaskCreateInput = {
   deletedAt?: InputMaybe<Scalars['String']['input']>;
   dv?: InputMaybe<Scalars['Int']['input']>;
   exportedRecordsCount?: InputMaybe<Scalars['Int']['input']>;
-  file?: InputMaybe<Scalars['Upload']['input']>;
+  file?: InputMaybe<Scalars['CustomUpload']['input']>;
   format?: InputMaybe<TicketExportTaskFormatType>;
   locale?: InputMaybe<Scalars['String']['input']>;
   meta?: InputMaybe<Scalars['JSON']['input']>;
@@ -100382,7 +100382,7 @@ export type TicketExportTaskUpdateInput = {
   deletedAt?: InputMaybe<Scalars['String']['input']>;
   dv?: InputMaybe<Scalars['Int']['input']>;
   exportedRecordsCount?: InputMaybe<Scalars['Int']['input']>;
-  file?: InputMaybe<Scalars['Upload']['input']>;
+  file?: InputMaybe<Scalars['CustomUpload']['input']>;
   format?: InputMaybe<TicketExportTaskFormatType>;
   locale?: InputMaybe<Scalars['String']['input']>;
   meta?: InputMaybe<Scalars['JSON']['input']>;
@@ -105948,7 +105948,7 @@ export type User = {
    */
   _label_?: Maybe<Scalars['String']['output']>;
   /**  User loaded avatar image  */
-  avatar?: Maybe<File>;
+  avatar?: Maybe<CustomFile>;
   createdAt?: Maybe<Scalars['String']['output']>;
   /**  Identifies a user, which has created this record. It is a technical connection, that can represent real users, as well as automated systems (bots, scripts). This field should not participate in business logic.  */
   createdBy?: Maybe<User>;
@@ -106013,7 +106013,7 @@ export type UserHasEmailArgs = {
 };
 
 export type UserCreateInput = {
-  avatar?: InputMaybe<Scalars['Upload']['input']>;
+  avatar?: InputMaybe<Scalars['CustomUpload']['input']>;
   createdAt?: InputMaybe<Scalars['String']['input']>;
   createdBy?: InputMaybe<UserRelateToOneInput>;
   customAccess?: InputMaybe<CustomAccessInput>;
@@ -109645,7 +109645,7 @@ export enum UserTypeType {
 }
 
 export type UserUpdateInput = {
-  avatar?: InputMaybe<Scalars['Upload']['input']>;
+  avatar?: InputMaybe<Scalars['CustomUpload']['input']>;
   createdAt?: InputMaybe<Scalars['String']['input']>;
   createdBy?: InputMaybe<UserRelateToOneInput>;
   customAccess?: InputMaybe<CustomAccessInput>;
