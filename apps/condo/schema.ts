@@ -5152,10 +5152,10 @@ export type B2BAppNewsSharingConfigCreateInput = {
   dv?: InputMaybe<Scalars['Int']['input']>;
   getRecipientsCountersUrl?: InputMaybe<Scalars['String']['input']>;
   getRecipientsUrl?: InputMaybe<Scalars['String']['input']>;
-  icon?: InputMaybe<Scalars['Upload']['input']>;
+  icon?: InputMaybe<Scalars['CustomUpload']['input']>;
   name?: InputMaybe<Scalars['String']['input']>;
   newId?: InputMaybe<Scalars['String']['input']>;
-  previewPicture?: InputMaybe<Scalars['Upload']['input']>;
+  previewPicture?: InputMaybe<Scalars['CustomUpload']['input']>;
   previewUrl?: InputMaybe<Scalars['String']['input']>;
   publishUrl?: InputMaybe<Scalars['String']['input']>;
   pushNotificationSettings?: InputMaybe<B2BAppNewsSharingConfigPushNotificationSettingType>;
@@ -5503,10 +5503,10 @@ export type B2BAppNewsSharingConfigUpdateInput = {
   dv?: InputMaybe<Scalars['Int']['input']>;
   getRecipientsCountersUrl?: InputMaybe<Scalars['String']['input']>;
   getRecipientsUrl?: InputMaybe<Scalars['String']['input']>;
-  icon?: InputMaybe<Scalars['Upload']['input']>;
+  icon?: InputMaybe<Scalars['CustomUpload']['input']>;
   name?: InputMaybe<Scalars['String']['input']>;
   newId?: InputMaybe<Scalars['String']['input']>;
-  previewPicture?: InputMaybe<Scalars['Upload']['input']>;
+  previewPicture?: InputMaybe<Scalars['CustomUpload']['input']>;
   previewUrl?: InputMaybe<Scalars['String']['input']>;
   publishUrl?: InputMaybe<Scalars['String']['input']>;
   pushNotificationSettings?: InputMaybe<B2BAppNewsSharingConfigPushNotificationSettingType>;
@@ -16665,7 +16665,7 @@ export type BillingIntegrationCreateInput = {
   appUrl?: InputMaybe<Scalars['String']['input']>;
   b2bApp?: InputMaybe<B2BAppRelateToOneInput>;
   bannerColor?: InputMaybe<Scalars['String']['input']>;
-  bannerPromoImage?: InputMaybe<Scalars['Upload']['input']>;
+  bannerPromoImage?: InputMaybe<Scalars['CustomUpload']['input']>;
   bannerTextColor?: InputMaybe<BillingIntegrationBannerTextColorType>;
   billingPageIcon?: InputMaybe<Scalars['Upload']['input']>;
   billingPageTitle?: InputMaybe<Scalars['String']['input']>;
@@ -16687,7 +16687,7 @@ export type BillingIntegrationCreateInput = {
   instructionExtraLink?: InputMaybe<Scalars['String']['input']>;
   isHidden?: InputMaybe<Scalars['Boolean']['input']>;
   isTrustedBankAccountSource?: InputMaybe<Scalars['Boolean']['input']>;
-  logo?: InputMaybe<Scalars['Upload']['input']>;
+  logo?: InputMaybe<Scalars['CustomUpload']['input']>;
   name?: InputMaybe<Scalars['String']['input']>;
   newId?: InputMaybe<Scalars['String']['input']>;
   receiptsLoadingTime?: InputMaybe<Scalars['String']['input']>;
@@ -18124,7 +18124,7 @@ export type BillingIntegrationUpdateInput = {
   appUrl?: InputMaybe<Scalars['String']['input']>;
   b2bApp?: InputMaybe<B2BAppRelateToOneInput>;
   bannerColor?: InputMaybe<Scalars['String']['input']>;
-  bannerPromoImage?: InputMaybe<Scalars['Upload']['input']>;
+  bannerPromoImage?: InputMaybe<Scalars['CustomUpload']['input']>;
   bannerTextColor?: InputMaybe<BillingIntegrationBannerTextColorType>;
   billingPageIcon?: InputMaybe<Scalars['Upload']['input']>;
   billingPageTitle?: InputMaybe<Scalars['String']['input']>;
@@ -18146,7 +18146,7 @@ export type BillingIntegrationUpdateInput = {
   instructionExtraLink?: InputMaybe<Scalars['String']['input']>;
   isHidden?: InputMaybe<Scalars['Boolean']['input']>;
   isTrustedBankAccountSource?: InputMaybe<Scalars['Boolean']['input']>;
-  logo?: InputMaybe<Scalars['Upload']['input']>;
+  logo?: InputMaybe<Scalars['CustomUpload']['input']>;
   name?: InputMaybe<Scalars['String']['input']>;
   newId?: InputMaybe<Scalars['String']['input']>;
   receiptsLoadingTime?: InputMaybe<Scalars['String']['input']>;
@@ -19352,10 +19352,10 @@ export type BillingReceiptFileCreateInput = {
   dv?: InputMaybe<Scalars['Int']['input']>;
   importId?: InputMaybe<Scalars['String']['input']>;
   newId?: InputMaybe<Scalars['String']['input']>;
-  publicDataFile?: InputMaybe<Scalars['Upload']['input']>;
+  publicDataFile?: InputMaybe<Scalars['CustomUpload']['input']>;
   receipt?: InputMaybe<BillingReceiptRelateToOneInput>;
   sender?: InputMaybe<SenderFieldInput>;
-  sensitiveDataFile?: InputMaybe<Scalars['Upload']['input']>;
+  sensitiveDataFile?: InputMaybe<Scalars['CustomUpload']['input']>;
   updatedAt?: InputMaybe<Scalars['String']['input']>;
   updatedBy?: InputMaybe<UserRelateToOneInput>;
   v?: InputMaybe<Scalars['Int']['input']>;
@@ -19603,10 +19603,10 @@ export type BillingReceiptFileUpdateInput = {
   dv?: InputMaybe<Scalars['Int']['input']>;
   importId?: InputMaybe<Scalars['String']['input']>;
   newId?: InputMaybe<Scalars['String']['input']>;
-  publicDataFile?: InputMaybe<Scalars['Upload']['input']>;
+  publicDataFile?: InputMaybe<Scalars['CustomUpload']['input']>;
   receipt?: InputMaybe<BillingReceiptRelateToOneInput>;
   sender?: InputMaybe<SenderFieldInput>;
-  sensitiveDataFile?: InputMaybe<Scalars['Upload']['input']>;
+  sensitiveDataFile?: InputMaybe<Scalars['CustomUpload']['input']>;
   updatedAt?: InputMaybe<Scalars['String']['input']>;
   updatedBy?: InputMaybe<UserRelateToOneInput>;
   v?: InputMaybe<Scalars['Int']['input']>;
@@ -21435,7 +21435,7 @@ export type CallRecordCreateInput = {
   deletedAt?: InputMaybe<Scalars['String']['input']>;
   destCallerPhone?: InputMaybe<Scalars['String']['input']>;
   dv?: InputMaybe<Scalars['Int']['input']>;
-  file?: InputMaybe<Scalars['Upload']['input']>;
+  file?: InputMaybe<Scalars['CustomUpload']['input']>;
   importId?: InputMaybe<Scalars['String']['input']>;
   isIncomingCall?: InputMaybe<Scalars['Boolean']['input']>;
   newId?: InputMaybe<Scalars['String']['input']>;
@@ -22065,7 +22065,7 @@ export type CallRecordUpdateInput = {
   deletedAt?: InputMaybe<Scalars['String']['input']>;
   destCallerPhone?: InputMaybe<Scalars['String']['input']>;
   dv?: InputMaybe<Scalars['Int']['input']>;
-  file?: InputMaybe<Scalars['Upload']['input']>;
+  file?: InputMaybe<Scalars['CustomUpload']['input']>;
   importId?: InputMaybe<Scalars['String']['input']>;
   isIncomingCall?: InputMaybe<Scalars['Boolean']['input']>;
   newId?: InputMaybe<Scalars['String']['input']>;
@@ -26484,7 +26484,7 @@ export type DocumentCreateInput = {
   createdBy?: InputMaybe<UserRelateToOneInput>;
   deletedAt?: InputMaybe<Scalars['String']['input']>;
   dv?: InputMaybe<Scalars['Int']['input']>;
-  file?: InputMaybe<Scalars['Upload']['input']>;
+  file?: InputMaybe<Scalars['CustomUpload']['input']>;
   meta?: InputMaybe<Scalars['JSON']['input']>;
   name?: InputMaybe<Scalars['String']['input']>;
   newId?: InputMaybe<Scalars['String']['input']>;
@@ -26720,7 +26720,7 @@ export type DocumentUpdateInput = {
   createdBy?: InputMaybe<UserRelateToOneInput>;
   deletedAt?: InputMaybe<Scalars['String']['input']>;
   dv?: InputMaybe<Scalars['Int']['input']>;
-  file?: InputMaybe<Scalars['Upload']['input']>;
+  file?: InputMaybe<Scalars['CustomUpload']['input']>;
   meta?: InputMaybe<Scalars['JSON']['input']>;
   name?: InputMaybe<Scalars['String']['input']>;
   newId?: InputMaybe<Scalars['String']['input']>;
@@ -31695,7 +31695,7 @@ export type MarketCategoryCreateInput = {
   createdBy?: InputMaybe<UserRelateToOneInput>;
   deletedAt?: InputMaybe<Scalars['String']['input']>;
   dv?: InputMaybe<Scalars['Int']['input']>;
-  image?: InputMaybe<Scalars['Upload']['input']>;
+  image?: InputMaybe<Scalars['CustomUpload']['input']>;
   mobileSettings?: InputMaybe<MarketCategoryMobileSettingsSchemaField>;
   name?: InputMaybe<Scalars['String']['input']>;
   newId?: InputMaybe<Scalars['String']['input']>;
@@ -31939,7 +31939,7 @@ export type MarketCategoryUpdateInput = {
   createdBy?: InputMaybe<UserRelateToOneInput>;
   deletedAt?: InputMaybe<Scalars['String']['input']>;
   dv?: InputMaybe<Scalars['Int']['input']>;
-  image?: InputMaybe<Scalars['Upload']['input']>;
+  image?: InputMaybe<Scalars['CustomUpload']['input']>;
   mobileSettings?: InputMaybe<MarketCategoryMobileSettingsSchemaField>;
   name?: InputMaybe<Scalars['String']['input']>;
   newId?: InputMaybe<Scalars['String']['input']>;
@@ -32142,7 +32142,7 @@ export type MarketItemFileCreateInput = {
   createdBy?: InputMaybe<UserRelateToOneInput>;
   deletedAt?: InputMaybe<Scalars['String']['input']>;
   dv?: InputMaybe<Scalars['Int']['input']>;
-  file?: InputMaybe<Scalars['Upload']['input']>;
+  file?: InputMaybe<Scalars['CustomUpload']['input']>;
   marketItem?: InputMaybe<MarketItemRelateToOneInput>;
   newId?: InputMaybe<Scalars['String']['input']>;
   sender?: InputMaybe<SenderFieldInput>;
@@ -32326,7 +32326,7 @@ export type MarketItemFileUpdateInput = {
   createdBy?: InputMaybe<UserRelateToOneInput>;
   deletedAt?: InputMaybe<Scalars['String']['input']>;
   dv?: InputMaybe<Scalars['Int']['input']>;
-  file?: InputMaybe<Scalars['Upload']['input']>;
+  file?: InputMaybe<Scalars['CustomUpload']['input']>;
   marketItem?: InputMaybe<MarketItemRelateToOneInput>;
   newId?: InputMaybe<Scalars['String']['input']>;
   sender?: InputMaybe<SenderFieldInput>;
@@ -63068,7 +63068,7 @@ export enum OrganizationCountryType {
 }
 
 export type OrganizationCreateInput = {
-  avatar?: InputMaybe<Scalars['Upload']['input']>;
+  avatar?: InputMaybe<Scalars['CustomUpload']['input']>;
   country?: InputMaybe<OrganizationCountryType>;
   createdAt?: InputMaybe<Scalars['String']['input']>;
   createdBy?: InputMaybe<UserRelateToOneInput>;
@@ -66340,7 +66340,7 @@ export enum OrganizationTypeType {
 }
 
 export type OrganizationUpdateInput = {
-  avatar?: InputMaybe<Scalars['Upload']['input']>;
+  avatar?: InputMaybe<Scalars['CustomUpload']['input']>;
   country?: InputMaybe<OrganizationCountryType>;
   createdAt?: InputMaybe<Scalars['String']['input']>;
   createdBy?: InputMaybe<UserRelateToOneInput>;
@@ -98751,7 +98751,7 @@ export type TicketCommentFileCreateInput = {
   createdBy?: InputMaybe<UserRelateToOneInput>;
   deletedAt?: InputMaybe<Scalars['String']['input']>;
   dv?: InputMaybe<Scalars['Int']['input']>;
-  file?: InputMaybe<Scalars['Upload']['input']>;
+  file?: InputMaybe<Scalars['CustomUpload']['input']>;
   newId?: InputMaybe<Scalars['String']['input']>;
   organization?: InputMaybe<OrganizationRelateToOneInput>;
   sender?: InputMaybe<SenderFieldInput>;
@@ -98951,7 +98951,7 @@ export type TicketCommentFileUpdateInput = {
   createdBy?: InputMaybe<UserRelateToOneInput>;
   deletedAt?: InputMaybe<Scalars['String']['input']>;
   dv?: InputMaybe<Scalars['Int']['input']>;
-  file?: InputMaybe<Scalars['Upload']['input']>;
+  file?: InputMaybe<Scalars['CustomUpload']['input']>;
   newId?: InputMaybe<Scalars['String']['input']>;
   organization?: InputMaybe<OrganizationRelateToOneInput>;
   sender?: InputMaybe<SenderFieldInput>;
@@ -100600,7 +100600,7 @@ export type TicketFileCreateInput = {
   createdBy?: InputMaybe<UserRelateToOneInput>;
   deletedAt?: InputMaybe<Scalars['String']['input']>;
   dv?: InputMaybe<Scalars['Int']['input']>;
-  file?: InputMaybe<Scalars['Upload']['input']>;
+  file?: InputMaybe<Scalars['CustomUpload']['input']>;
   newId?: InputMaybe<Scalars['String']['input']>;
   organization?: InputMaybe<OrganizationRelateToOneInput>;
   sender?: InputMaybe<SenderFieldInput>;
@@ -100792,7 +100792,7 @@ export type TicketFileUpdateInput = {
   createdBy?: InputMaybe<UserRelateToOneInput>;
   deletedAt?: InputMaybe<Scalars['String']['input']>;
   dv?: InputMaybe<Scalars['Int']['input']>;
-  file?: InputMaybe<Scalars['Upload']['input']>;
+  file?: InputMaybe<Scalars['CustomUpload']['input']>;
   newId?: InputMaybe<Scalars['String']['input']>;
   organization?: InputMaybe<OrganizationRelateToOneInput>;
   sender?: InputMaybe<SenderFieldInput>;
@@ -106887,7 +106887,7 @@ export type UserHelpRequestFileCreateInput = {
   createdBy?: InputMaybe<UserRelateToOneInput>;
   deletedAt?: InputMaybe<Scalars['String']['input']>;
   dv?: InputMaybe<Scalars['Int']['input']>;
-  file?: InputMaybe<Scalars['Upload']['input']>;
+  file?: InputMaybe<Scalars['CustomUpload']['input']>;
   newId?: InputMaybe<Scalars['String']['input']>;
   sender?: InputMaybe<SenderFieldInput>;
   updatedAt?: InputMaybe<Scalars['String']['input']>;
@@ -107071,7 +107071,7 @@ export type UserHelpRequestFileUpdateInput = {
   createdBy?: InputMaybe<UserRelateToOneInput>;
   deletedAt?: InputMaybe<Scalars['String']['input']>;
   dv?: InputMaybe<Scalars['Int']['input']>;
-  file?: InputMaybe<Scalars['Upload']['input']>;
+  file?: InputMaybe<Scalars['CustomUpload']['input']>;
   newId?: InputMaybe<Scalars['String']['input']>;
   sender?: InputMaybe<SenderFieldInput>;
   updatedAt?: InputMaybe<Scalars['String']['input']>;
