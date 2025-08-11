@@ -22335,6 +22335,8 @@ export type CondoFile = {
    *  4. As an alias to the 'id' field on the CondoFile List.
    */
   _label_?: Maybe<Scalars['String']['output']>;
+  /**  Indicates that this file has been connected to one or more entity  */
+  attach?: Maybe<Scalars['Boolean']['output']>;
   createdAt?: Maybe<Scalars['String']['output']>;
   /**  Identifies a user, which has created this record. It is a technical connection, that can represent real users, as well as automated systems (bots, scripts). This field should not participate in business logic.  */
   createdBy?: Maybe<User>;
@@ -22358,6 +22360,7 @@ export type CondoFile = {
 };
 
 export type CondoFileCreateInput = {
+  attach?: InputMaybe<Scalars['Boolean']['input']>;
   createdAt?: InputMaybe<Scalars['String']['input']>;
   createdBy?: InputMaybe<UserRelateToOneInput>;
   deletedAt?: InputMaybe<Scalars['String']['input']>;
@@ -22383,6 +22386,7 @@ export type CondoFileHistoryRecord = {
    *  4. As an alias to the 'id' field on the CondoFileHistoryRecord List.
    */
   _label_?: Maybe<Scalars['String']['output']>;
+  attach?: Maybe<Scalars['Boolean']['output']>;
   createdAt?: Maybe<Scalars['String']['output']>;
   createdBy?: Maybe<Scalars['String']['output']>;
   deletedAt?: Maybe<Scalars['String']['output']>;
@@ -22402,6 +22406,7 @@ export type CondoFileHistoryRecord = {
 };
 
 export type CondoFileHistoryRecordCreateInput = {
+  attach?: InputMaybe<Scalars['Boolean']['input']>;
   createdAt?: InputMaybe<Scalars['String']['input']>;
   createdBy?: InputMaybe<Scalars['String']['input']>;
   deletedAt?: InputMaybe<Scalars['String']['input']>;
@@ -22426,6 +22431,7 @@ export enum CondoFileHistoryRecordHistoryActionType {
 }
 
 export type CondoFileHistoryRecordUpdateInput = {
+  attach?: InputMaybe<Scalars['Boolean']['input']>;
   createdAt?: InputMaybe<Scalars['String']['input']>;
   createdBy?: InputMaybe<Scalars['String']['input']>;
   deletedAt?: InputMaybe<Scalars['String']['input']>;
@@ -22446,6 +22452,8 @@ export type CondoFileHistoryRecordUpdateInput = {
 export type CondoFileHistoryRecordWhereInput = {
   AND?: InputMaybe<Array<InputMaybe<CondoFileHistoryRecordWhereInput>>>;
   OR?: InputMaybe<Array<InputMaybe<CondoFileHistoryRecordWhereInput>>>;
+  attach?: InputMaybe<Scalars['Boolean']['input']>;
+  attach_not?: InputMaybe<Scalars['Boolean']['input']>;
   createdAt?: InputMaybe<Scalars['String']['input']>;
   createdAt_gt?: InputMaybe<Scalars['String']['input']>;
   createdAt_gte?: InputMaybe<Scalars['String']['input']>;
@@ -22564,6 +22572,7 @@ export type CondoFileHistoryRecordsUpdateInput = {
 };
 
 export type CondoFileUpdateInput = {
+  attach?: InputMaybe<Scalars['Boolean']['input']>;
   createdAt?: InputMaybe<Scalars['String']['input']>;
   createdBy?: InputMaybe<UserRelateToOneInput>;
   deletedAt?: InputMaybe<Scalars['String']['input']>;
@@ -22581,6 +22590,8 @@ export type CondoFileUpdateInput = {
 export type CondoFileWhereInput = {
   AND?: InputMaybe<Array<InputMaybe<CondoFileWhereInput>>>;
   OR?: InputMaybe<Array<InputMaybe<CondoFileWhereInput>>>;
+  attach?: InputMaybe<Scalars['Boolean']['input']>;
+  attach_not?: InputMaybe<Scalars['Boolean']['input']>;
   createdAt?: InputMaybe<Scalars['String']['input']>;
   createdAt_gt?: InputMaybe<Scalars['String']['input']>;
   createdAt_gte?: InputMaybe<Scalars['String']['input']>;
@@ -88969,6 +88980,8 @@ export enum SortCallRecordsBy {
 }
 
 export enum SortCondoFileHistoryRecordsBy {
+  AttachAsc = 'attach_ASC',
+  AttachDesc = 'attach_DESC',
   CreatedAtAsc = 'createdAt_ASC',
   CreatedAtDesc = 'createdAt_DESC',
   DeletedAtAsc = 'deletedAt_ASC',
@@ -88990,6 +89003,8 @@ export enum SortCondoFileHistoryRecordsBy {
 }
 
 export enum SortCondoFilesBy {
+  AttachAsc = 'attach_ASC',
+  AttachDesc = 'attach_DESC',
   CreatedAtAsc = 'createdAt_ASC',
   CreatedAtDesc = 'createdAt_DESC',
   CreatedByAsc = 'createdBy_ASC',
