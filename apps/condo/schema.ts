@@ -22324,369 +22324,6 @@ export type CompleteConfirmPhoneActionOutput = {
   status: Scalars['String']['output'];
 };
 
-/**  File uploaded to platform and meta with ownership data  */
-export type CondoFile = {
-  __typename?: 'CondoFile';
-  /**
-   * This virtual field will be resolved in one of the following ways (in this order):
-   *  1. Execution of 'labelResolver' set on the CondoFile List config, or
-   *  2. As an alias to the field set on 'labelField' in the CondoFile List config, or
-   *  3. As an alias to a 'name' field on the CondoFile List (if one exists), or
-   *  4. As an alias to the 'id' field on the CondoFile List.
-   */
-  _label_?: Maybe<Scalars['String']['output']>;
-  /**  Indicates that this file has been connected to one or more entity  */
-  attach?: Maybe<Scalars['Boolean']['output']>;
-  createdAt?: Maybe<Scalars['String']['output']>;
-  /**  Identifies a user, which has created this record. It is a technical connection, that can represent real users, as well as automated systems (bots, scripts). This field should not participate in business logic.  */
-  createdBy?: Maybe<User>;
-  deletedAt?: Maybe<Scalars['String']['output']>;
-  /**  Data structure Version  */
-  dv?: Maybe<Scalars['Int']['output']>;
-  /**  File uploaded to platform  */
-  file?: Maybe<Scalars['JSON']['output']>;
-  id: Scalars['ID']['output'];
-  newId?: Maybe<Scalars['String']['output']>;
-  /**  Client-side device identification used for the anti-fraud detection. Example `{ "dv":1, "fingerprint":"VaxSw2aXZa"}`. Where the `fingerprint` should be the same for the same devices and it's not linked to the user ID. It's the device ID like browser / mobile application / remote system  */
-  sender?: Maybe<SenderField>;
-  /**  File signature created from user and storage meta and application secret  */
-  signature?: Maybe<Scalars['String']['output']>;
-  updatedAt?: Maybe<Scalars['String']['output']>;
-  /**  Identifies a user, which has updated this record. It is a technical connection, that can represent real users, as well as automated systems (bots, scripts). This field should not participate in business logic.  */
-  updatedBy?: Maybe<User>;
-  /**  User who uploaded the file  */
-  user?: Maybe<User>;
-  v?: Maybe<Scalars['Int']['output']>;
-};
-
-export type CondoFileCreateInput = {
-  attach?: InputMaybe<Scalars['Boolean']['input']>;
-  createdAt?: InputMaybe<Scalars['String']['input']>;
-  createdBy?: InputMaybe<UserRelateToOneInput>;
-  deletedAt?: InputMaybe<Scalars['String']['input']>;
-  dv?: InputMaybe<Scalars['Int']['input']>;
-  file?: InputMaybe<Scalars['JSON']['input']>;
-  newId?: InputMaybe<Scalars['String']['input']>;
-  sender?: InputMaybe<SenderFieldInput>;
-  signature?: InputMaybe<Scalars['String']['input']>;
-  updatedAt?: InputMaybe<Scalars['String']['input']>;
-  updatedBy?: InputMaybe<UserRelateToOneInput>;
-  user?: InputMaybe<UserRelateToOneInput>;
-  v?: InputMaybe<Scalars['Int']['input']>;
-};
-
-/**  A keystone list  */
-export type CondoFileHistoryRecord = {
-  __typename?: 'CondoFileHistoryRecord';
-  /**
-   * This virtual field will be resolved in one of the following ways (in this order):
-   *  1. Execution of 'labelResolver' set on the CondoFileHistoryRecord List config, or
-   *  2. As an alias to the field set on 'labelField' in the CondoFileHistoryRecord List config, or
-   *  3. As an alias to a 'name' field on the CondoFileHistoryRecord List (if one exists), or
-   *  4. As an alias to the 'id' field on the CondoFileHistoryRecord List.
-   */
-  _label_?: Maybe<Scalars['String']['output']>;
-  attach?: Maybe<Scalars['Boolean']['output']>;
-  createdAt?: Maybe<Scalars['String']['output']>;
-  createdBy?: Maybe<Scalars['String']['output']>;
-  deletedAt?: Maybe<Scalars['String']['output']>;
-  dv?: Maybe<Scalars['Int']['output']>;
-  file?: Maybe<Scalars['JSON']['output']>;
-  history_action?: Maybe<CondoFileHistoryRecordHistoryActionType>;
-  history_date?: Maybe<Scalars['String']['output']>;
-  history_id?: Maybe<Scalars['String']['output']>;
-  id: Scalars['ID']['output'];
-  newId?: Maybe<Scalars['JSON']['output']>;
-  sender?: Maybe<Scalars['JSON']['output']>;
-  signature?: Maybe<Scalars['String']['output']>;
-  updatedAt?: Maybe<Scalars['String']['output']>;
-  updatedBy?: Maybe<Scalars['String']['output']>;
-  user?: Maybe<Scalars['String']['output']>;
-  v?: Maybe<Scalars['Int']['output']>;
-};
-
-export type CondoFileHistoryRecordCreateInput = {
-  attach?: InputMaybe<Scalars['Boolean']['input']>;
-  createdAt?: InputMaybe<Scalars['String']['input']>;
-  createdBy?: InputMaybe<Scalars['String']['input']>;
-  deletedAt?: InputMaybe<Scalars['String']['input']>;
-  dv?: InputMaybe<Scalars['Int']['input']>;
-  file?: InputMaybe<Scalars['JSON']['input']>;
-  history_action?: InputMaybe<CondoFileHistoryRecordHistoryActionType>;
-  history_date?: InputMaybe<Scalars['String']['input']>;
-  history_id?: InputMaybe<Scalars['String']['input']>;
-  newId?: InputMaybe<Scalars['JSON']['input']>;
-  sender?: InputMaybe<Scalars['JSON']['input']>;
-  signature?: InputMaybe<Scalars['String']['input']>;
-  updatedAt?: InputMaybe<Scalars['String']['input']>;
-  updatedBy?: InputMaybe<Scalars['String']['input']>;
-  user?: InputMaybe<Scalars['String']['input']>;
-  v?: InputMaybe<Scalars['Int']['input']>;
-};
-
-export enum CondoFileHistoryRecordHistoryActionType {
-  C = 'c',
-  D = 'd',
-  U = 'u'
-}
-
-export type CondoFileHistoryRecordUpdateInput = {
-  attach?: InputMaybe<Scalars['Boolean']['input']>;
-  createdAt?: InputMaybe<Scalars['String']['input']>;
-  createdBy?: InputMaybe<Scalars['String']['input']>;
-  deletedAt?: InputMaybe<Scalars['String']['input']>;
-  dv?: InputMaybe<Scalars['Int']['input']>;
-  file?: InputMaybe<Scalars['JSON']['input']>;
-  history_action?: InputMaybe<CondoFileHistoryRecordHistoryActionType>;
-  history_date?: InputMaybe<Scalars['String']['input']>;
-  history_id?: InputMaybe<Scalars['String']['input']>;
-  newId?: InputMaybe<Scalars['JSON']['input']>;
-  sender?: InputMaybe<Scalars['JSON']['input']>;
-  signature?: InputMaybe<Scalars['String']['input']>;
-  updatedAt?: InputMaybe<Scalars['String']['input']>;
-  updatedBy?: InputMaybe<Scalars['String']['input']>;
-  user?: InputMaybe<Scalars['String']['input']>;
-  v?: InputMaybe<Scalars['Int']['input']>;
-};
-
-export type CondoFileHistoryRecordWhereInput = {
-  AND?: InputMaybe<Array<InputMaybe<CondoFileHistoryRecordWhereInput>>>;
-  OR?: InputMaybe<Array<InputMaybe<CondoFileHistoryRecordWhereInput>>>;
-  attach?: InputMaybe<Scalars['Boolean']['input']>;
-  attach_not?: InputMaybe<Scalars['Boolean']['input']>;
-  createdAt?: InputMaybe<Scalars['String']['input']>;
-  createdAt_gt?: InputMaybe<Scalars['String']['input']>;
-  createdAt_gte?: InputMaybe<Scalars['String']['input']>;
-  createdAt_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  createdAt_lt?: InputMaybe<Scalars['String']['input']>;
-  createdAt_lte?: InputMaybe<Scalars['String']['input']>;
-  createdAt_not?: InputMaybe<Scalars['String']['input']>;
-  createdAt_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  createdBy?: InputMaybe<Scalars['String']['input']>;
-  createdBy_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  createdBy_not?: InputMaybe<Scalars['String']['input']>;
-  createdBy_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  deletedAt?: InputMaybe<Scalars['String']['input']>;
-  deletedAt_gt?: InputMaybe<Scalars['String']['input']>;
-  deletedAt_gte?: InputMaybe<Scalars['String']['input']>;
-  deletedAt_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  deletedAt_lt?: InputMaybe<Scalars['String']['input']>;
-  deletedAt_lte?: InputMaybe<Scalars['String']['input']>;
-  deletedAt_not?: InputMaybe<Scalars['String']['input']>;
-  deletedAt_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  dv?: InputMaybe<Scalars['Int']['input']>;
-  dv_gt?: InputMaybe<Scalars['Int']['input']>;
-  dv_gte?: InputMaybe<Scalars['Int']['input']>;
-  dv_in?: InputMaybe<Array<InputMaybe<Scalars['Int']['input']>>>;
-  dv_lt?: InputMaybe<Scalars['Int']['input']>;
-  dv_lte?: InputMaybe<Scalars['Int']['input']>;
-  dv_not?: InputMaybe<Scalars['Int']['input']>;
-  dv_not_in?: InputMaybe<Array<InputMaybe<Scalars['Int']['input']>>>;
-  file?: InputMaybe<Scalars['JSON']['input']>;
-  file_in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
-  file_not?: InputMaybe<Scalars['JSON']['input']>;
-  file_not_in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
-  history_action?: InputMaybe<CondoFileHistoryRecordHistoryActionType>;
-  history_action_in?: InputMaybe<Array<InputMaybe<CondoFileHistoryRecordHistoryActionType>>>;
-  history_action_not?: InputMaybe<CondoFileHistoryRecordHistoryActionType>;
-  history_action_not_in?: InputMaybe<Array<InputMaybe<CondoFileHistoryRecordHistoryActionType>>>;
-  history_date?: InputMaybe<Scalars['String']['input']>;
-  history_date_gt?: InputMaybe<Scalars['String']['input']>;
-  history_date_gte?: InputMaybe<Scalars['String']['input']>;
-  history_date_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  history_date_lt?: InputMaybe<Scalars['String']['input']>;
-  history_date_lte?: InputMaybe<Scalars['String']['input']>;
-  history_date_not?: InputMaybe<Scalars['String']['input']>;
-  history_date_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  history_id?: InputMaybe<Scalars['String']['input']>;
-  history_id_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  history_id_not?: InputMaybe<Scalars['String']['input']>;
-  history_id_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  id?: InputMaybe<Scalars['ID']['input']>;
-  id_in?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
-  id_not?: InputMaybe<Scalars['ID']['input']>;
-  id_not_in?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
-  newId?: InputMaybe<Scalars['JSON']['input']>;
-  newId_in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
-  newId_not?: InputMaybe<Scalars['JSON']['input']>;
-  newId_not_in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
-  sender?: InputMaybe<Scalars['JSON']['input']>;
-  sender_in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
-  sender_not?: InputMaybe<Scalars['JSON']['input']>;
-  sender_not_in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
-  signature?: InputMaybe<Scalars['String']['input']>;
-  signature_contains?: InputMaybe<Scalars['String']['input']>;
-  signature_contains_i?: InputMaybe<Scalars['String']['input']>;
-  signature_ends_with?: InputMaybe<Scalars['String']['input']>;
-  signature_ends_with_i?: InputMaybe<Scalars['String']['input']>;
-  signature_i?: InputMaybe<Scalars['String']['input']>;
-  signature_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  signature_not?: InputMaybe<Scalars['String']['input']>;
-  signature_not_contains?: InputMaybe<Scalars['String']['input']>;
-  signature_not_contains_i?: InputMaybe<Scalars['String']['input']>;
-  signature_not_ends_with?: InputMaybe<Scalars['String']['input']>;
-  signature_not_ends_with_i?: InputMaybe<Scalars['String']['input']>;
-  signature_not_i?: InputMaybe<Scalars['String']['input']>;
-  signature_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  signature_not_starts_with?: InputMaybe<Scalars['String']['input']>;
-  signature_not_starts_with_i?: InputMaybe<Scalars['String']['input']>;
-  signature_starts_with?: InputMaybe<Scalars['String']['input']>;
-  signature_starts_with_i?: InputMaybe<Scalars['String']['input']>;
-  updatedAt?: InputMaybe<Scalars['String']['input']>;
-  updatedAt_gt?: InputMaybe<Scalars['String']['input']>;
-  updatedAt_gte?: InputMaybe<Scalars['String']['input']>;
-  updatedAt_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  updatedAt_lt?: InputMaybe<Scalars['String']['input']>;
-  updatedAt_lte?: InputMaybe<Scalars['String']['input']>;
-  updatedAt_not?: InputMaybe<Scalars['String']['input']>;
-  updatedAt_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  updatedBy?: InputMaybe<Scalars['String']['input']>;
-  updatedBy_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  updatedBy_not?: InputMaybe<Scalars['String']['input']>;
-  updatedBy_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  user?: InputMaybe<Scalars['String']['input']>;
-  user_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  user_not?: InputMaybe<Scalars['String']['input']>;
-  user_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  v?: InputMaybe<Scalars['Int']['input']>;
-  v_gt?: InputMaybe<Scalars['Int']['input']>;
-  v_gte?: InputMaybe<Scalars['Int']['input']>;
-  v_in?: InputMaybe<Array<InputMaybe<Scalars['Int']['input']>>>;
-  v_lt?: InputMaybe<Scalars['Int']['input']>;
-  v_lte?: InputMaybe<Scalars['Int']['input']>;
-  v_not?: InputMaybe<Scalars['Int']['input']>;
-  v_not_in?: InputMaybe<Array<InputMaybe<Scalars['Int']['input']>>>;
-};
-
-export type CondoFileHistoryRecordWhereUniqueInput = {
-  id: Scalars['ID']['input'];
-};
-
-export type CondoFileHistoryRecordsCreateInput = {
-  data?: InputMaybe<CondoFileHistoryRecordCreateInput>;
-};
-
-export type CondoFileHistoryRecordsUpdateInput = {
-  data?: InputMaybe<CondoFileHistoryRecordUpdateInput>;
-  id: Scalars['ID']['input'];
-};
-
-export type CondoFileUpdateInput = {
-  attach?: InputMaybe<Scalars['Boolean']['input']>;
-  createdAt?: InputMaybe<Scalars['String']['input']>;
-  createdBy?: InputMaybe<UserRelateToOneInput>;
-  deletedAt?: InputMaybe<Scalars['String']['input']>;
-  dv?: InputMaybe<Scalars['Int']['input']>;
-  file?: InputMaybe<Scalars['JSON']['input']>;
-  newId?: InputMaybe<Scalars['String']['input']>;
-  sender?: InputMaybe<SenderFieldInput>;
-  signature?: InputMaybe<Scalars['String']['input']>;
-  updatedAt?: InputMaybe<Scalars['String']['input']>;
-  updatedBy?: InputMaybe<UserRelateToOneInput>;
-  user?: InputMaybe<UserRelateToOneInput>;
-  v?: InputMaybe<Scalars['Int']['input']>;
-};
-
-export type CondoFileWhereInput = {
-  AND?: InputMaybe<Array<InputMaybe<CondoFileWhereInput>>>;
-  OR?: InputMaybe<Array<InputMaybe<CondoFileWhereInput>>>;
-  attach?: InputMaybe<Scalars['Boolean']['input']>;
-  attach_not?: InputMaybe<Scalars['Boolean']['input']>;
-  createdAt?: InputMaybe<Scalars['String']['input']>;
-  createdAt_gt?: InputMaybe<Scalars['String']['input']>;
-  createdAt_gte?: InputMaybe<Scalars['String']['input']>;
-  createdAt_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  createdAt_lt?: InputMaybe<Scalars['String']['input']>;
-  createdAt_lte?: InputMaybe<Scalars['String']['input']>;
-  createdAt_not?: InputMaybe<Scalars['String']['input']>;
-  createdAt_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  createdBy?: InputMaybe<UserWhereInput>;
-  createdBy_is_null?: InputMaybe<Scalars['Boolean']['input']>;
-  deletedAt?: InputMaybe<Scalars['String']['input']>;
-  deletedAt_gt?: InputMaybe<Scalars['String']['input']>;
-  deletedAt_gte?: InputMaybe<Scalars['String']['input']>;
-  deletedAt_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  deletedAt_lt?: InputMaybe<Scalars['String']['input']>;
-  deletedAt_lte?: InputMaybe<Scalars['String']['input']>;
-  deletedAt_not?: InputMaybe<Scalars['String']['input']>;
-  deletedAt_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  dv?: InputMaybe<Scalars['Int']['input']>;
-  dv_gt?: InputMaybe<Scalars['Int']['input']>;
-  dv_gte?: InputMaybe<Scalars['Int']['input']>;
-  dv_in?: InputMaybe<Array<InputMaybe<Scalars['Int']['input']>>>;
-  dv_lt?: InputMaybe<Scalars['Int']['input']>;
-  dv_lte?: InputMaybe<Scalars['Int']['input']>;
-  dv_not?: InputMaybe<Scalars['Int']['input']>;
-  dv_not_in?: InputMaybe<Array<InputMaybe<Scalars['Int']['input']>>>;
-  file?: InputMaybe<Scalars['JSON']['input']>;
-  file_in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
-  file_not?: InputMaybe<Scalars['JSON']['input']>;
-  file_not_in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
-  id?: InputMaybe<Scalars['ID']['input']>;
-  id_in?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
-  id_not?: InputMaybe<Scalars['ID']['input']>;
-  id_not_in?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
-  newId?: InputMaybe<Scalars['String']['input']>;
-  newId_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  newId_not?: InputMaybe<Scalars['String']['input']>;
-  newId_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  sender?: InputMaybe<SenderFieldInput>;
-  sender_in?: InputMaybe<Array<InputMaybe<SenderFieldInput>>>;
-  sender_not?: InputMaybe<SenderFieldInput>;
-  sender_not_in?: InputMaybe<Array<InputMaybe<SenderFieldInput>>>;
-  signature?: InputMaybe<Scalars['String']['input']>;
-  signature_contains?: InputMaybe<Scalars['String']['input']>;
-  signature_contains_i?: InputMaybe<Scalars['String']['input']>;
-  signature_ends_with?: InputMaybe<Scalars['String']['input']>;
-  signature_ends_with_i?: InputMaybe<Scalars['String']['input']>;
-  signature_i?: InputMaybe<Scalars['String']['input']>;
-  signature_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  signature_not?: InputMaybe<Scalars['String']['input']>;
-  signature_not_contains?: InputMaybe<Scalars['String']['input']>;
-  signature_not_contains_i?: InputMaybe<Scalars['String']['input']>;
-  signature_not_ends_with?: InputMaybe<Scalars['String']['input']>;
-  signature_not_ends_with_i?: InputMaybe<Scalars['String']['input']>;
-  signature_not_i?: InputMaybe<Scalars['String']['input']>;
-  signature_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  signature_not_starts_with?: InputMaybe<Scalars['String']['input']>;
-  signature_not_starts_with_i?: InputMaybe<Scalars['String']['input']>;
-  signature_starts_with?: InputMaybe<Scalars['String']['input']>;
-  signature_starts_with_i?: InputMaybe<Scalars['String']['input']>;
-  updatedAt?: InputMaybe<Scalars['String']['input']>;
-  updatedAt_gt?: InputMaybe<Scalars['String']['input']>;
-  updatedAt_gte?: InputMaybe<Scalars['String']['input']>;
-  updatedAt_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  updatedAt_lt?: InputMaybe<Scalars['String']['input']>;
-  updatedAt_lte?: InputMaybe<Scalars['String']['input']>;
-  updatedAt_not?: InputMaybe<Scalars['String']['input']>;
-  updatedAt_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  updatedBy?: InputMaybe<UserWhereInput>;
-  updatedBy_is_null?: InputMaybe<Scalars['Boolean']['input']>;
-  user?: InputMaybe<UserWhereInput>;
-  user_is_null?: InputMaybe<Scalars['Boolean']['input']>;
-  v?: InputMaybe<Scalars['Int']['input']>;
-  v_gt?: InputMaybe<Scalars['Int']['input']>;
-  v_gte?: InputMaybe<Scalars['Int']['input']>;
-  v_in?: InputMaybe<Array<InputMaybe<Scalars['Int']['input']>>>;
-  v_lt?: InputMaybe<Scalars['Int']['input']>;
-  v_lte?: InputMaybe<Scalars['Int']['input']>;
-  v_not?: InputMaybe<Scalars['Int']['input']>;
-  v_not_in?: InputMaybe<Array<InputMaybe<Scalars['Int']['input']>>>;
-};
-
-export type CondoFileWhereUniqueInput = {
-  id: Scalars['ID']['input'];
-};
-
-export type CondoFilesCreateInput = {
-  data?: InputMaybe<CondoFileCreateInput>;
-};
-
-export type CondoFilesUpdateInput = {
-  data?: InputMaybe<CondoFileUpdateInput>;
-  id: Scalars['ID']['input'];
-};
-
 /**  User confirm email actions  */
 export type ConfirmEmailAction = {
   __typename?: 'ConfirmEmailAction';
@@ -28259,16 +27896,320 @@ export enum FeedbackAdditionalOptionsType {
   Slowly = 'slowly'
 }
 
+/**  Stores uploaded file meta data and owner  */
 export type File = {
   __typename?: 'File';
+  /**
+   * This virtual field will be resolved in one of the following ways (in this order):
+   *  1. Execution of 'labelResolver' set on the File List config, or
+   *  2. As an alias to the field set on 'labelField' in the File List config, or
+   *  3. As an alias to a 'name' field on the File List (if one exists), or
+   *  4. As an alias to the 'id' field on the File List.
+   */
+  _label_?: Maybe<Scalars['String']['output']>;
+  createdAt?: Maybe<Scalars['String']['output']>;
+  /**  Identifies a user, which has created this record. It is a technical connection, that can represent real users, as well as automated systems (bots, scripts). This field should not participate in business logic.  */
+  createdBy?: Maybe<User>;
+  deletedAt?: Maybe<Scalars['String']['output']>;
+  /**  Data structure Version  */
+  dv?: Maybe<Scalars['Int']['output']>;
   encoding?: Maybe<Scalars['String']['output']>;
+  /**  Metadata of the file, that was uploaded to platform  */
+  fileMeta?: Maybe<Scalars['JSON']['output']>;
   filename?: Maybe<Scalars['String']['output']>;
-  id?: Maybe<Scalars['ID']['output']>;
+  id: Scalars['ID']['output'];
   meta?: Maybe<Scalars['JSON']['output']>;
   mimetype?: Maybe<Scalars['String']['output']>;
+  newId?: Maybe<Scalars['String']['output']>;
   originalFilename?: Maybe<Scalars['String']['output']>;
   path?: Maybe<Scalars['String']['output']>;
   publicUrl?: Maybe<Scalars['String']['output']>;
+  /**  Client-side device identification used for the anti-fraud detection. Example `{ "dv":1, "fingerprint":"VaxSw2aXZa"}`. Where the `fingerprint` should be the same for the same devices and it's not linked to the user ID. It's the device ID like browser / mobile application / remote system  */
+  sender?: Maybe<SenderField>;
+  updatedAt?: Maybe<Scalars['String']['output']>;
+  /**  Identifies a user, which has updated this record. It is a technical connection, that can represent real users, as well as automated systems (bots, scripts). This field should not participate in business logic.  */
+  updatedBy?: Maybe<User>;
+  /**  User who uploaded the file  */
+  user?: Maybe<User>;
+  v?: Maybe<Scalars['Int']['output']>;
+};
+
+export type FileCreateInput = {
+  createdAt?: InputMaybe<Scalars['String']['input']>;
+  createdBy?: InputMaybe<UserRelateToOneInput>;
+  deletedAt?: InputMaybe<Scalars['String']['input']>;
+  dv?: InputMaybe<Scalars['Int']['input']>;
+  fileMeta?: InputMaybe<Scalars['JSON']['input']>;
+  newId?: InputMaybe<Scalars['String']['input']>;
+  sender?: InputMaybe<SenderFieldInput>;
+  updatedAt?: InputMaybe<Scalars['String']['input']>;
+  updatedBy?: InputMaybe<UserRelateToOneInput>;
+  user?: InputMaybe<UserRelateToOneInput>;
+  v?: InputMaybe<Scalars['Int']['input']>;
+};
+
+/**  A keystone list  */
+export type FileHistoryRecord = {
+  __typename?: 'FileHistoryRecord';
+  /**
+   * This virtual field will be resolved in one of the following ways (in this order):
+   *  1. Execution of 'labelResolver' set on the FileHistoryRecord List config, or
+   *  2. As an alias to the field set on 'labelField' in the FileHistoryRecord List config, or
+   *  3. As an alias to a 'name' field on the FileHistoryRecord List (if one exists), or
+   *  4. As an alias to the 'id' field on the FileHistoryRecord List.
+   */
+  _label_?: Maybe<Scalars['String']['output']>;
+  createdAt?: Maybe<Scalars['String']['output']>;
+  createdBy?: Maybe<Scalars['String']['output']>;
+  deletedAt?: Maybe<Scalars['String']['output']>;
+  dv?: Maybe<Scalars['Int']['output']>;
+  fileMeta?: Maybe<Scalars['JSON']['output']>;
+  history_action?: Maybe<FileHistoryRecordHistoryActionType>;
+  history_date?: Maybe<Scalars['String']['output']>;
+  history_id?: Maybe<Scalars['String']['output']>;
+  id: Scalars['ID']['output'];
+  newId?: Maybe<Scalars['JSON']['output']>;
+  sender?: Maybe<Scalars['JSON']['output']>;
+  updatedAt?: Maybe<Scalars['String']['output']>;
+  updatedBy?: Maybe<Scalars['String']['output']>;
+  user?: Maybe<Scalars['String']['output']>;
+  v?: Maybe<Scalars['Int']['output']>;
+};
+
+export type FileHistoryRecordCreateInput = {
+  createdAt?: InputMaybe<Scalars['String']['input']>;
+  createdBy?: InputMaybe<Scalars['String']['input']>;
+  deletedAt?: InputMaybe<Scalars['String']['input']>;
+  dv?: InputMaybe<Scalars['Int']['input']>;
+  fileMeta?: InputMaybe<Scalars['JSON']['input']>;
+  history_action?: InputMaybe<FileHistoryRecordHistoryActionType>;
+  history_date?: InputMaybe<Scalars['String']['input']>;
+  history_id?: InputMaybe<Scalars['String']['input']>;
+  newId?: InputMaybe<Scalars['JSON']['input']>;
+  sender?: InputMaybe<Scalars['JSON']['input']>;
+  updatedAt?: InputMaybe<Scalars['String']['input']>;
+  updatedBy?: InputMaybe<Scalars['String']['input']>;
+  user?: InputMaybe<Scalars['String']['input']>;
+  v?: InputMaybe<Scalars['Int']['input']>;
+};
+
+export enum FileHistoryRecordHistoryActionType {
+  C = 'c',
+  D = 'd',
+  U = 'u'
+}
+
+export type FileHistoryRecordUpdateInput = {
+  createdAt?: InputMaybe<Scalars['String']['input']>;
+  createdBy?: InputMaybe<Scalars['String']['input']>;
+  deletedAt?: InputMaybe<Scalars['String']['input']>;
+  dv?: InputMaybe<Scalars['Int']['input']>;
+  fileMeta?: InputMaybe<Scalars['JSON']['input']>;
+  history_action?: InputMaybe<FileHistoryRecordHistoryActionType>;
+  history_date?: InputMaybe<Scalars['String']['input']>;
+  history_id?: InputMaybe<Scalars['String']['input']>;
+  newId?: InputMaybe<Scalars['JSON']['input']>;
+  sender?: InputMaybe<Scalars['JSON']['input']>;
+  updatedAt?: InputMaybe<Scalars['String']['input']>;
+  updatedBy?: InputMaybe<Scalars['String']['input']>;
+  user?: InputMaybe<Scalars['String']['input']>;
+  v?: InputMaybe<Scalars['Int']['input']>;
+};
+
+export type FileHistoryRecordWhereInput = {
+  AND?: InputMaybe<Array<InputMaybe<FileHistoryRecordWhereInput>>>;
+  OR?: InputMaybe<Array<InputMaybe<FileHistoryRecordWhereInput>>>;
+  createdAt?: InputMaybe<Scalars['String']['input']>;
+  createdAt_gt?: InputMaybe<Scalars['String']['input']>;
+  createdAt_gte?: InputMaybe<Scalars['String']['input']>;
+  createdAt_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  createdAt_lt?: InputMaybe<Scalars['String']['input']>;
+  createdAt_lte?: InputMaybe<Scalars['String']['input']>;
+  createdAt_not?: InputMaybe<Scalars['String']['input']>;
+  createdAt_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  createdBy?: InputMaybe<Scalars['String']['input']>;
+  createdBy_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  createdBy_not?: InputMaybe<Scalars['String']['input']>;
+  createdBy_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  deletedAt?: InputMaybe<Scalars['String']['input']>;
+  deletedAt_gt?: InputMaybe<Scalars['String']['input']>;
+  deletedAt_gte?: InputMaybe<Scalars['String']['input']>;
+  deletedAt_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  deletedAt_lt?: InputMaybe<Scalars['String']['input']>;
+  deletedAt_lte?: InputMaybe<Scalars['String']['input']>;
+  deletedAt_not?: InputMaybe<Scalars['String']['input']>;
+  deletedAt_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  dv?: InputMaybe<Scalars['Int']['input']>;
+  dv_gt?: InputMaybe<Scalars['Int']['input']>;
+  dv_gte?: InputMaybe<Scalars['Int']['input']>;
+  dv_in?: InputMaybe<Array<InputMaybe<Scalars['Int']['input']>>>;
+  dv_lt?: InputMaybe<Scalars['Int']['input']>;
+  dv_lte?: InputMaybe<Scalars['Int']['input']>;
+  dv_not?: InputMaybe<Scalars['Int']['input']>;
+  dv_not_in?: InputMaybe<Array<InputMaybe<Scalars['Int']['input']>>>;
+  fileMeta?: InputMaybe<Scalars['JSON']['input']>;
+  fileMeta_in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  fileMeta_not?: InputMaybe<Scalars['JSON']['input']>;
+  fileMeta_not_in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  history_action?: InputMaybe<FileHistoryRecordHistoryActionType>;
+  history_action_in?: InputMaybe<Array<InputMaybe<FileHistoryRecordHistoryActionType>>>;
+  history_action_not?: InputMaybe<FileHistoryRecordHistoryActionType>;
+  history_action_not_in?: InputMaybe<Array<InputMaybe<FileHistoryRecordHistoryActionType>>>;
+  history_date?: InputMaybe<Scalars['String']['input']>;
+  history_date_gt?: InputMaybe<Scalars['String']['input']>;
+  history_date_gte?: InputMaybe<Scalars['String']['input']>;
+  history_date_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  history_date_lt?: InputMaybe<Scalars['String']['input']>;
+  history_date_lte?: InputMaybe<Scalars['String']['input']>;
+  history_date_not?: InputMaybe<Scalars['String']['input']>;
+  history_date_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  history_id?: InputMaybe<Scalars['String']['input']>;
+  history_id_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  history_id_not?: InputMaybe<Scalars['String']['input']>;
+  history_id_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  id?: InputMaybe<Scalars['ID']['input']>;
+  id_in?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  id_not?: InputMaybe<Scalars['ID']['input']>;
+  id_not_in?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  newId?: InputMaybe<Scalars['JSON']['input']>;
+  newId_in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  newId_not?: InputMaybe<Scalars['JSON']['input']>;
+  newId_not_in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  sender?: InputMaybe<Scalars['JSON']['input']>;
+  sender_in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  sender_not?: InputMaybe<Scalars['JSON']['input']>;
+  sender_not_in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  updatedAt?: InputMaybe<Scalars['String']['input']>;
+  updatedAt_gt?: InputMaybe<Scalars['String']['input']>;
+  updatedAt_gte?: InputMaybe<Scalars['String']['input']>;
+  updatedAt_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  updatedAt_lt?: InputMaybe<Scalars['String']['input']>;
+  updatedAt_lte?: InputMaybe<Scalars['String']['input']>;
+  updatedAt_not?: InputMaybe<Scalars['String']['input']>;
+  updatedAt_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  updatedBy?: InputMaybe<Scalars['String']['input']>;
+  updatedBy_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  updatedBy_not?: InputMaybe<Scalars['String']['input']>;
+  updatedBy_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  user?: InputMaybe<Scalars['String']['input']>;
+  user_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  user_not?: InputMaybe<Scalars['String']['input']>;
+  user_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  v?: InputMaybe<Scalars['Int']['input']>;
+  v_gt?: InputMaybe<Scalars['Int']['input']>;
+  v_gte?: InputMaybe<Scalars['Int']['input']>;
+  v_in?: InputMaybe<Array<InputMaybe<Scalars['Int']['input']>>>;
+  v_lt?: InputMaybe<Scalars['Int']['input']>;
+  v_lte?: InputMaybe<Scalars['Int']['input']>;
+  v_not?: InputMaybe<Scalars['Int']['input']>;
+  v_not_in?: InputMaybe<Array<InputMaybe<Scalars['Int']['input']>>>;
+};
+
+export type FileHistoryRecordWhereUniqueInput = {
+  id: Scalars['ID']['input'];
+};
+
+export type FileHistoryRecordsCreateInput = {
+  data?: InputMaybe<FileHistoryRecordCreateInput>;
+};
+
+export type FileHistoryRecordsUpdateInput = {
+  data?: InputMaybe<FileHistoryRecordUpdateInput>;
+  id: Scalars['ID']['input'];
+};
+
+export type FileUpdateInput = {
+  createdAt?: InputMaybe<Scalars['String']['input']>;
+  createdBy?: InputMaybe<UserRelateToOneInput>;
+  deletedAt?: InputMaybe<Scalars['String']['input']>;
+  dv?: InputMaybe<Scalars['Int']['input']>;
+  fileMeta?: InputMaybe<Scalars['JSON']['input']>;
+  newId?: InputMaybe<Scalars['String']['input']>;
+  sender?: InputMaybe<SenderFieldInput>;
+  updatedAt?: InputMaybe<Scalars['String']['input']>;
+  updatedBy?: InputMaybe<UserRelateToOneInput>;
+  user?: InputMaybe<UserRelateToOneInput>;
+  v?: InputMaybe<Scalars['Int']['input']>;
+};
+
+export type FileWhereInput = {
+  AND?: InputMaybe<Array<InputMaybe<FileWhereInput>>>;
+  OR?: InputMaybe<Array<InputMaybe<FileWhereInput>>>;
+  createdAt?: InputMaybe<Scalars['String']['input']>;
+  createdAt_gt?: InputMaybe<Scalars['String']['input']>;
+  createdAt_gte?: InputMaybe<Scalars['String']['input']>;
+  createdAt_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  createdAt_lt?: InputMaybe<Scalars['String']['input']>;
+  createdAt_lte?: InputMaybe<Scalars['String']['input']>;
+  createdAt_not?: InputMaybe<Scalars['String']['input']>;
+  createdAt_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  createdBy?: InputMaybe<UserWhereInput>;
+  createdBy_is_null?: InputMaybe<Scalars['Boolean']['input']>;
+  deletedAt?: InputMaybe<Scalars['String']['input']>;
+  deletedAt_gt?: InputMaybe<Scalars['String']['input']>;
+  deletedAt_gte?: InputMaybe<Scalars['String']['input']>;
+  deletedAt_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  deletedAt_lt?: InputMaybe<Scalars['String']['input']>;
+  deletedAt_lte?: InputMaybe<Scalars['String']['input']>;
+  deletedAt_not?: InputMaybe<Scalars['String']['input']>;
+  deletedAt_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  dv?: InputMaybe<Scalars['Int']['input']>;
+  dv_gt?: InputMaybe<Scalars['Int']['input']>;
+  dv_gte?: InputMaybe<Scalars['Int']['input']>;
+  dv_in?: InputMaybe<Array<InputMaybe<Scalars['Int']['input']>>>;
+  dv_lt?: InputMaybe<Scalars['Int']['input']>;
+  dv_lte?: InputMaybe<Scalars['Int']['input']>;
+  dv_not?: InputMaybe<Scalars['Int']['input']>;
+  dv_not_in?: InputMaybe<Array<InputMaybe<Scalars['Int']['input']>>>;
+  fileMeta?: InputMaybe<Scalars['JSON']['input']>;
+  fileMeta_in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  fileMeta_not?: InputMaybe<Scalars['JSON']['input']>;
+  fileMeta_not_in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  id?: InputMaybe<Scalars['ID']['input']>;
+  id_in?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  id_not?: InputMaybe<Scalars['ID']['input']>;
+  id_not_in?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  newId?: InputMaybe<Scalars['String']['input']>;
+  newId_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  newId_not?: InputMaybe<Scalars['String']['input']>;
+  newId_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  sender?: InputMaybe<SenderFieldInput>;
+  sender_in?: InputMaybe<Array<InputMaybe<SenderFieldInput>>>;
+  sender_not?: InputMaybe<SenderFieldInput>;
+  sender_not_in?: InputMaybe<Array<InputMaybe<SenderFieldInput>>>;
+  updatedAt?: InputMaybe<Scalars['String']['input']>;
+  updatedAt_gt?: InputMaybe<Scalars['String']['input']>;
+  updatedAt_gte?: InputMaybe<Scalars['String']['input']>;
+  updatedAt_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  updatedAt_lt?: InputMaybe<Scalars['String']['input']>;
+  updatedAt_lte?: InputMaybe<Scalars['String']['input']>;
+  updatedAt_not?: InputMaybe<Scalars['String']['input']>;
+  updatedAt_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  updatedBy?: InputMaybe<UserWhereInput>;
+  updatedBy_is_null?: InputMaybe<Scalars['Boolean']['input']>;
+  user?: InputMaybe<UserWhereInput>;
+  user_is_null?: InputMaybe<Scalars['Boolean']['input']>;
+  v?: InputMaybe<Scalars['Int']['input']>;
+  v_gt?: InputMaybe<Scalars['Int']['input']>;
+  v_gte?: InputMaybe<Scalars['Int']['input']>;
+  v_in?: InputMaybe<Array<InputMaybe<Scalars['Int']['input']>>>;
+  v_lt?: InputMaybe<Scalars['Int']['input']>;
+  v_lte?: InputMaybe<Scalars['Int']['input']>;
+  v_not?: InputMaybe<Scalars['Int']['input']>;
+  v_not_in?: InputMaybe<Array<InputMaybe<Scalars['Int']['input']>>>;
+};
+
+export type FileWhereUniqueInput = {
+  id: Scalars['ID']['input'];
+};
+
+export type FilesCreateInput = {
+  data?: InputMaybe<FileCreateInput>;
+};
+
+export type FilesUpdateInput = {
+  data?: InputMaybe<FileUpdateInput>;
+  id: Scalars['ID']['input'];
 };
 
 export type FindOrganizationByAddressMeterType = {
@@ -44081,14 +44022,6 @@ export type Mutation = {
   createCallRecordHistoryRecords?: Maybe<Array<Maybe<CallRecordHistoryRecord>>>;
   /**  Create multiple CallRecord items.  */
   createCallRecords?: Maybe<Array<Maybe<CallRecord>>>;
-  /**  Create a single CondoFile item.  */
-  createCondoFile?: Maybe<CondoFile>;
-  /**  Create a single CondoFileHistoryRecord item.  */
-  createCondoFileHistoryRecord?: Maybe<CondoFileHistoryRecord>;
-  /**  Create multiple CondoFileHistoryRecord items.  */
-  createCondoFileHistoryRecords?: Maybe<Array<Maybe<CondoFileHistoryRecord>>>;
-  /**  Create multiple CondoFile items.  */
-  createCondoFiles?: Maybe<Array<Maybe<CondoFile>>>;
   /**  Create a single ConfirmEmailAction item.  */
   createConfirmEmailAction?: Maybe<ConfirmEmailAction>;
   /**  Create a single ConfirmEmailActionHistoryRecord item.  */
@@ -44177,6 +44110,14 @@ export type Mutation = {
   createExternalTokenAccessRightHistoryRecords?: Maybe<Array<Maybe<ExternalTokenAccessRightHistoryRecord>>>;
   /**  Create multiple ExternalTokenAccessRight items.  */
   createExternalTokenAccessRights?: Maybe<Array<Maybe<ExternalTokenAccessRight>>>;
+  /**  Create a single File item.  */
+  createFile?: Maybe<File>;
+  /**  Create a single FileHistoryRecord item.  */
+  createFileHistoryRecord?: Maybe<FileHistoryRecord>;
+  /**  Create multiple FileHistoryRecord items.  */
+  createFileHistoryRecords?: Maybe<Array<Maybe<FileHistoryRecord>>>;
+  /**  Create multiple File items.  */
+  createFiles?: Maybe<Array<Maybe<File>>>;
   /**  Create a single FindOrganizationsByTinLog item.  */
   createFindOrganizationsByTinLog?: Maybe<FindOrganizationsByTinLog>;
   /**  Create multiple FindOrganizationsByTinLog items.  */
@@ -45226,14 +45167,6 @@ export type Mutation = {
   deleteCallRecordHistoryRecords?: Maybe<Array<Maybe<CallRecordHistoryRecord>>>;
   /**  Delete multiple CallRecord items by ID.  */
   deleteCallRecords?: Maybe<Array<Maybe<CallRecord>>>;
-  /**  Delete a single CondoFile item by ID.  */
-  deleteCondoFile?: Maybe<CondoFile>;
-  /**  Delete a single CondoFileHistoryRecord item by ID.  */
-  deleteCondoFileHistoryRecord?: Maybe<CondoFileHistoryRecord>;
-  /**  Delete multiple CondoFileHistoryRecord items by ID.  */
-  deleteCondoFileHistoryRecords?: Maybe<Array<Maybe<CondoFileHistoryRecord>>>;
-  /**  Delete multiple CondoFile items by ID.  */
-  deleteCondoFiles?: Maybe<Array<Maybe<CondoFile>>>;
   /**  Delete a single ConfirmEmailAction item by ID.  */
   deleteConfirmEmailAction?: Maybe<ConfirmEmailAction>;
   /**  Delete a single ConfirmEmailActionHistoryRecord item by ID.  */
@@ -45322,6 +45255,14 @@ export type Mutation = {
   deleteExternalTokenAccessRightHistoryRecords?: Maybe<Array<Maybe<ExternalTokenAccessRightHistoryRecord>>>;
   /**  Delete multiple ExternalTokenAccessRight items by ID.  */
   deleteExternalTokenAccessRights?: Maybe<Array<Maybe<ExternalTokenAccessRight>>>;
+  /**  Delete a single File item by ID.  */
+  deleteFile?: Maybe<File>;
+  /**  Delete a single FileHistoryRecord item by ID.  */
+  deleteFileHistoryRecord?: Maybe<FileHistoryRecord>;
+  /**  Delete multiple FileHistoryRecord items by ID.  */
+  deleteFileHistoryRecords?: Maybe<Array<Maybe<FileHistoryRecord>>>;
+  /**  Delete multiple File items by ID.  */
+  deleteFiles?: Maybe<Array<Maybe<File>>>;
   /**  Delete a single FindOrganizationsByTinLog item by ID.  */
   deleteFindOrganizationsByTinLog?: Maybe<FindOrganizationsByTinLog>;
   /**  Delete multiple FindOrganizationsByTinLog items by ID.  */
@@ -49400,14 +49341,6 @@ export type Mutation = {
   updateCallRecordHistoryRecords?: Maybe<Array<Maybe<CallRecordHistoryRecord>>>;
   /**  Update multiple CallRecord items by ID.  */
   updateCallRecords?: Maybe<Array<Maybe<CallRecord>>>;
-  /**  Update a single CondoFile item by ID.  */
-  updateCondoFile?: Maybe<CondoFile>;
-  /**  Update a single CondoFileHistoryRecord item by ID.  */
-  updateCondoFileHistoryRecord?: Maybe<CondoFileHistoryRecord>;
-  /**  Update multiple CondoFileHistoryRecord items by ID.  */
-  updateCondoFileHistoryRecords?: Maybe<Array<Maybe<CondoFileHistoryRecord>>>;
-  /**  Update multiple CondoFile items by ID.  */
-  updateCondoFiles?: Maybe<Array<Maybe<CondoFile>>>;
   /**  Update a single ConfirmEmailAction item by ID.  */
   updateConfirmEmailAction?: Maybe<ConfirmEmailAction>;
   /**  Update a single ConfirmEmailActionHistoryRecord item by ID.  */
@@ -49496,6 +49429,14 @@ export type Mutation = {
   updateExternalTokenAccessRightHistoryRecords?: Maybe<Array<Maybe<ExternalTokenAccessRightHistoryRecord>>>;
   /**  Update multiple ExternalTokenAccessRight items by ID.  */
   updateExternalTokenAccessRights?: Maybe<Array<Maybe<ExternalTokenAccessRight>>>;
+  /**  Update a single File item by ID.  */
+  updateFile?: Maybe<File>;
+  /**  Update a single FileHistoryRecord item by ID.  */
+  updateFileHistoryRecord?: Maybe<FileHistoryRecord>;
+  /**  Update multiple FileHistoryRecord items by ID.  */
+  updateFileHistoryRecords?: Maybe<Array<Maybe<FileHistoryRecord>>>;
+  /**  Update multiple File items by ID.  */
+  updateFiles?: Maybe<Array<Maybe<File>>>;
   /**  Update a single FindOrganizationsByTinLog item by ID.  */
   updateFindOrganizationsByTinLog?: Maybe<FindOrganizationsByTinLog>;
   /**  Update multiple FindOrganizationsByTinLog items by ID.  */
@@ -51195,26 +51136,6 @@ export type MutationCreateCallRecordsArgs = {
 };
 
 
-export type MutationCreateCondoFileArgs = {
-  data?: InputMaybe<CondoFileCreateInput>;
-};
-
-
-export type MutationCreateCondoFileHistoryRecordArgs = {
-  data?: InputMaybe<CondoFileHistoryRecordCreateInput>;
-};
-
-
-export type MutationCreateCondoFileHistoryRecordsArgs = {
-  data?: InputMaybe<Array<InputMaybe<CondoFileHistoryRecordsCreateInput>>>;
-};
-
-
-export type MutationCreateCondoFilesArgs = {
-  data?: InputMaybe<Array<InputMaybe<CondoFilesCreateInput>>>;
-};
-
-
 export type MutationCreateConfirmEmailActionArgs = {
   data?: InputMaybe<ConfirmEmailActionCreateInput>;
 };
@@ -51432,6 +51353,26 @@ export type MutationCreateExternalTokenAccessRightHistoryRecordsArgs = {
 
 export type MutationCreateExternalTokenAccessRightsArgs = {
   data?: InputMaybe<Array<InputMaybe<ExternalTokenAccessRightsCreateInput>>>;
+};
+
+
+export type MutationCreateFileArgs = {
+  data?: InputMaybe<FileCreateInput>;
+};
+
+
+export type MutationCreateFileHistoryRecordArgs = {
+  data?: InputMaybe<FileHistoryRecordCreateInput>;
+};
+
+
+export type MutationCreateFileHistoryRecordsArgs = {
+  data?: InputMaybe<Array<InputMaybe<FileHistoryRecordsCreateInput>>>;
+};
+
+
+export type MutationCreateFilesArgs = {
+  data?: InputMaybe<Array<InputMaybe<FilesCreateInput>>>;
 };
 
 
@@ -54060,26 +54001,6 @@ export type MutationDeleteCallRecordsArgs = {
 };
 
 
-export type MutationDeleteCondoFileArgs = {
-  id: Scalars['ID']['input'];
-};
-
-
-export type MutationDeleteCondoFileHistoryRecordArgs = {
-  id: Scalars['ID']['input'];
-};
-
-
-export type MutationDeleteCondoFileHistoryRecordsArgs = {
-  ids?: InputMaybe<Array<Scalars['ID']['input']>>;
-};
-
-
-export type MutationDeleteCondoFilesArgs = {
-  ids?: InputMaybe<Array<Scalars['ID']['input']>>;
-};
-
-
 export type MutationDeleteConfirmEmailActionArgs = {
   id: Scalars['ID']['input'];
 };
@@ -54296,6 +54217,26 @@ export type MutationDeleteExternalTokenAccessRightHistoryRecordsArgs = {
 
 
 export type MutationDeleteExternalTokenAccessRightsArgs = {
+  ids?: InputMaybe<Array<Scalars['ID']['input']>>;
+};
+
+
+export type MutationDeleteFileArgs = {
+  id: Scalars['ID']['input'];
+};
+
+
+export type MutationDeleteFileHistoryRecordArgs = {
+  id: Scalars['ID']['input'];
+};
+
+
+export type MutationDeleteFileHistoryRecordsArgs = {
+  ids?: InputMaybe<Array<Scalars['ID']['input']>>;
+};
+
+
+export type MutationDeleteFilesArgs = {
   ids?: InputMaybe<Array<Scalars['ID']['input']>>;
 };
 
@@ -57226,28 +57167,6 @@ export type MutationUpdateCallRecordsArgs = {
 };
 
 
-export type MutationUpdateCondoFileArgs = {
-  data?: InputMaybe<CondoFileUpdateInput>;
-  id: Scalars['ID']['input'];
-};
-
-
-export type MutationUpdateCondoFileHistoryRecordArgs = {
-  data?: InputMaybe<CondoFileHistoryRecordUpdateInput>;
-  id: Scalars['ID']['input'];
-};
-
-
-export type MutationUpdateCondoFileHistoryRecordsArgs = {
-  data?: InputMaybe<Array<InputMaybe<CondoFileHistoryRecordsUpdateInput>>>;
-};
-
-
-export type MutationUpdateCondoFilesArgs = {
-  data?: InputMaybe<Array<InputMaybe<CondoFilesUpdateInput>>>;
-};
-
-
 export type MutationUpdateConfirmEmailActionArgs = {
   data?: InputMaybe<ConfirmEmailActionUpdateInput>;
   id: Scalars['ID']['input'];
@@ -57487,6 +57406,28 @@ export type MutationUpdateExternalTokenAccessRightHistoryRecordsArgs = {
 
 export type MutationUpdateExternalTokenAccessRightsArgs = {
   data?: InputMaybe<Array<InputMaybe<ExternalTokenAccessRightsUpdateInput>>>;
+};
+
+
+export type MutationUpdateFileArgs = {
+  data?: InputMaybe<FileUpdateInput>;
+  id: Scalars['ID']['input'];
+};
+
+
+export type MutationUpdateFileHistoryRecordArgs = {
+  data?: InputMaybe<FileHistoryRecordUpdateInput>;
+  id: Scalars['ID']['input'];
+};
+
+
+export type MutationUpdateFileHistoryRecordsArgs = {
+  data?: InputMaybe<Array<InputMaybe<FileHistoryRecordsUpdateInput>>>;
+};
+
+
+export type MutationUpdateFilesArgs = {
+  data?: InputMaybe<Array<InputMaybe<FilesUpdateInput>>>;
 };
 
 
@@ -72300,10 +72241,6 @@ export type Query = {
   CallRecordFragmentHistoryRecord?: Maybe<CallRecordFragmentHistoryRecord>;
   /**  Search for the CallRecordHistoryRecord item with the matching ID.  */
   CallRecordHistoryRecord?: Maybe<CallRecordHistoryRecord>;
-  /**  Search for the CondoFile item with the matching ID.  */
-  CondoFile?: Maybe<CondoFile>;
-  /**  Search for the CondoFileHistoryRecord item with the matching ID.  */
-  CondoFileHistoryRecord?: Maybe<CondoFileHistoryRecord>;
   /**  Search for the ConfirmEmailAction item with the matching ID.  */
   ConfirmEmailAction?: Maybe<ConfirmEmailAction>;
   /**  Search for the ConfirmEmailActionHistoryRecord item with the matching ID.  */
@@ -72348,6 +72285,10 @@ export type Query = {
   ExternalTokenAccessRight?: Maybe<ExternalTokenAccessRight>;
   /**  Search for the ExternalTokenAccessRightHistoryRecord item with the matching ID.  */
   ExternalTokenAccessRightHistoryRecord?: Maybe<ExternalTokenAccessRightHistoryRecord>;
+  /**  Search for the File item with the matching ID.  */
+  File?: Maybe<File>;
+  /**  Search for the FileHistoryRecord item with the matching ID.  */
+  FileHistoryRecord?: Maybe<FileHistoryRecord>;
   /**  Search for the FindOrganizationsByTinLog item with the matching ID.  */
   FindOrganizationsByTinLog?: Maybe<FindOrganizationsByTinLog>;
   /**  Search for the Incident item with the matching ID.  */
@@ -72872,10 +72813,6 @@ export type Query = {
   _CallRecordHistoryRecordsMeta?: Maybe<_ListMeta>;
   /**  Retrieve the meta-data for the CallRecord list.  */
   _CallRecordsMeta?: Maybe<_ListMeta>;
-  /**  Retrieve the meta-data for the CondoFileHistoryRecord list.  */
-  _CondoFileHistoryRecordsMeta?: Maybe<_ListMeta>;
-  /**  Retrieve the meta-data for the CondoFile list.  */
-  _CondoFilesMeta?: Maybe<_ListMeta>;
   /**  Retrieve the meta-data for the ConfirmEmailActionHistoryRecord list.  */
   _ConfirmEmailActionHistoryRecordsMeta?: Maybe<_ListMeta>;
   /**  Retrieve the meta-data for the ConfirmEmailAction list.  */
@@ -72920,6 +72857,10 @@ export type Query = {
   _ExternalTokenAccessRightHistoryRecordsMeta?: Maybe<_ListMeta>;
   /**  Retrieve the meta-data for the ExternalTokenAccessRight list.  */
   _ExternalTokenAccessRightsMeta?: Maybe<_ListMeta>;
+  /**  Retrieve the meta-data for the FileHistoryRecord list.  */
+  _FileHistoryRecordsMeta?: Maybe<_ListMeta>;
+  /**  Retrieve the meta-data for the File list.  */
+  _FilesMeta?: Maybe<_ListMeta>;
   /**  Retrieve the meta-data for the FindOrganizationsByTinLog list.  */
   _FindOrganizationsByTinLogsMeta?: Maybe<_ListMeta>;
   /**  Retrieve the meta-data for the IncidentChange list.  */
@@ -73466,10 +73407,6 @@ export type Query = {
   _allCallRecordHistoryRecordsMeta?: Maybe<_QueryMeta>;
   /**  Perform a meta-query on all CallRecord items which match the where clause.  */
   _allCallRecordsMeta?: Maybe<_QueryMeta>;
-  /**  Perform a meta-query on all CondoFileHistoryRecord items which match the where clause.  */
-  _allCondoFileHistoryRecordsMeta?: Maybe<_QueryMeta>;
-  /**  Perform a meta-query on all CondoFile items which match the where clause.  */
-  _allCondoFilesMeta?: Maybe<_QueryMeta>;
   /**  Perform a meta-query on all ConfirmEmailActionHistoryRecord items which match the where clause.  */
   _allConfirmEmailActionHistoryRecordsMeta?: Maybe<_QueryMeta>;
   /**  Perform a meta-query on all ConfirmEmailAction items which match the where clause.  */
@@ -73514,6 +73451,10 @@ export type Query = {
   _allExternalTokenAccessRightHistoryRecordsMeta?: Maybe<_QueryMeta>;
   /**  Perform a meta-query on all ExternalTokenAccessRight items which match the where clause.  */
   _allExternalTokenAccessRightsMeta?: Maybe<_QueryMeta>;
+  /**  Perform a meta-query on all FileHistoryRecord items which match the where clause.  */
+  _allFileHistoryRecordsMeta?: Maybe<_QueryMeta>;
+  /**  Perform a meta-query on all File items which match the where clause.  */
+  _allFilesMeta?: Maybe<_QueryMeta>;
   /**  Perform a meta-query on all FindOrganizationsByTinLog items which match the where clause.  */
   _allFindOrganizationsByTinLogsMeta?: Maybe<_QueryMeta>;
   /**  Perform a meta-query on all IncidentChange items which match the where clause.  */
@@ -74068,10 +74009,6 @@ export type Query = {
   allCallRecordHistoryRecords?: Maybe<Array<Maybe<CallRecordHistoryRecord>>>;
   /**  Search for all CallRecord items which match the where clause.  */
   allCallRecords?: Maybe<Array<Maybe<CallRecord>>>;
-  /**  Search for all CondoFileHistoryRecord items which match the where clause.  */
-  allCondoFileHistoryRecords?: Maybe<Array<Maybe<CondoFileHistoryRecord>>>;
-  /**  Search for all CondoFile items which match the where clause.  */
-  allCondoFiles?: Maybe<Array<Maybe<CondoFile>>>;
   /**  Search for all ConfirmEmailActionHistoryRecord items which match the where clause.  */
   allConfirmEmailActionHistoryRecords?: Maybe<Array<Maybe<ConfirmEmailActionHistoryRecord>>>;
   /**  Search for all ConfirmEmailAction items which match the where clause.  */
@@ -74116,6 +74053,10 @@ export type Query = {
   allExternalTokenAccessRightHistoryRecords?: Maybe<Array<Maybe<ExternalTokenAccessRightHistoryRecord>>>;
   /**  Search for all ExternalTokenAccessRight items which match the where clause.  */
   allExternalTokenAccessRights?: Maybe<Array<Maybe<ExternalTokenAccessRight>>>;
+  /**  Search for all FileHistoryRecord items which match the where clause.  */
+  allFileHistoryRecords?: Maybe<Array<Maybe<FileHistoryRecord>>>;
+  /**  Search for all File items which match the where clause.  */
+  allFiles?: Maybe<Array<Maybe<File>>>;
   /**  Search for all FindOrganizationsByTinLog items which match the where clause.  */
   allFindOrganizationsByTinLogs?: Maybe<Array<Maybe<FindOrganizationsByTinLog>>>;
   /**  Search for all IncidentChange items which match the where clause.  */
@@ -75153,16 +75094,6 @@ export type QueryCallRecordHistoryRecordArgs = {
 };
 
 
-export type QueryCondoFileArgs = {
-  where: CondoFileWhereUniqueInput;
-};
-
-
-export type QueryCondoFileHistoryRecordArgs = {
-  where: CondoFileHistoryRecordWhereUniqueInput;
-};
-
-
 export type QueryConfirmEmailActionArgs = {
   where: ConfirmEmailActionWhereUniqueInput;
 };
@@ -75270,6 +75201,16 @@ export type QueryExternalTokenAccessRightArgs = {
 
 export type QueryExternalTokenAccessRightHistoryRecordArgs = {
   where: ExternalTokenAccessRightHistoryRecordWhereUniqueInput;
+};
+
+
+export type QueryFileArgs = {
+  where: FileWhereUniqueInput;
+};
+
+
+export type QueryFileHistoryRecordArgs = {
+  where: FileHistoryRecordWhereUniqueInput;
 };
 
 
@@ -76993,26 +76934,6 @@ export type Query_AllCallRecordsMetaArgs = {
 };
 
 
-export type Query_AllCondoFileHistoryRecordsMetaArgs = {
-  first?: InputMaybe<Scalars['Int']['input']>;
-  orderBy?: InputMaybe<Scalars['String']['input']>;
-  search?: InputMaybe<Scalars['String']['input']>;
-  skip?: InputMaybe<Scalars['Int']['input']>;
-  sortBy?: InputMaybe<Array<SortCondoFileHistoryRecordsBy>>;
-  where?: InputMaybe<CondoFileHistoryRecordWhereInput>;
-};
-
-
-export type Query_AllCondoFilesMetaArgs = {
-  first?: InputMaybe<Scalars['Int']['input']>;
-  orderBy?: InputMaybe<Scalars['String']['input']>;
-  search?: InputMaybe<Scalars['String']['input']>;
-  skip?: InputMaybe<Scalars['Int']['input']>;
-  sortBy?: InputMaybe<Array<SortCondoFilesBy>>;
-  where?: InputMaybe<CondoFileWhereInput>;
-};
-
-
 export type Query_AllConfirmEmailActionHistoryRecordsMetaArgs = {
   first?: InputMaybe<Scalars['Int']['input']>;
   orderBy?: InputMaybe<Scalars['String']['input']>;
@@ -77230,6 +77151,26 @@ export type Query_AllExternalTokenAccessRightsMetaArgs = {
   skip?: InputMaybe<Scalars['Int']['input']>;
   sortBy?: InputMaybe<Array<SortExternalTokenAccessRightsBy>>;
   where?: InputMaybe<ExternalTokenAccessRightWhereInput>;
+};
+
+
+export type Query_AllFileHistoryRecordsMetaArgs = {
+  first?: InputMaybe<Scalars['Int']['input']>;
+  orderBy?: InputMaybe<Scalars['String']['input']>;
+  search?: InputMaybe<Scalars['String']['input']>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+  sortBy?: InputMaybe<Array<SortFileHistoryRecordsBy>>;
+  where?: InputMaybe<FileHistoryRecordWhereInput>;
+};
+
+
+export type Query_AllFilesMetaArgs = {
+  first?: InputMaybe<Scalars['Int']['input']>;
+  orderBy?: InputMaybe<Scalars['String']['input']>;
+  search?: InputMaybe<Scalars['String']['input']>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+  sortBy?: InputMaybe<Array<SortFilesBy>>;
+  where?: InputMaybe<FileWhereInput>;
 };
 
 
@@ -79863,26 +79804,6 @@ export type QueryAllCallRecordsArgs = {
 };
 
 
-export type QueryAllCondoFileHistoryRecordsArgs = {
-  first?: InputMaybe<Scalars['Int']['input']>;
-  orderBy?: InputMaybe<Scalars['String']['input']>;
-  search?: InputMaybe<Scalars['String']['input']>;
-  skip?: InputMaybe<Scalars['Int']['input']>;
-  sortBy?: InputMaybe<Array<SortCondoFileHistoryRecordsBy>>;
-  where?: InputMaybe<CondoFileHistoryRecordWhereInput>;
-};
-
-
-export type QueryAllCondoFilesArgs = {
-  first?: InputMaybe<Scalars['Int']['input']>;
-  orderBy?: InputMaybe<Scalars['String']['input']>;
-  search?: InputMaybe<Scalars['String']['input']>;
-  skip?: InputMaybe<Scalars['Int']['input']>;
-  sortBy?: InputMaybe<Array<SortCondoFilesBy>>;
-  where?: InputMaybe<CondoFileWhereInput>;
-};
-
-
 export type QueryAllConfirmEmailActionHistoryRecordsArgs = {
   first?: InputMaybe<Scalars['Int']['input']>;
   orderBy?: InputMaybe<Scalars['String']['input']>;
@@ -80100,6 +80021,26 @@ export type QueryAllExternalTokenAccessRightsArgs = {
   skip?: InputMaybe<Scalars['Int']['input']>;
   sortBy?: InputMaybe<Array<SortExternalTokenAccessRightsBy>>;
   where?: InputMaybe<ExternalTokenAccessRightWhereInput>;
+};
+
+
+export type QueryAllFileHistoryRecordsArgs = {
+  first?: InputMaybe<Scalars['Int']['input']>;
+  orderBy?: InputMaybe<Scalars['String']['input']>;
+  search?: InputMaybe<Scalars['String']['input']>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+  sortBy?: InputMaybe<Array<SortFileHistoryRecordsBy>>;
+  where?: InputMaybe<FileHistoryRecordWhereInput>;
+};
+
+
+export type QueryAllFilesArgs = {
+  first?: InputMaybe<Scalars['Int']['input']>;
+  orderBy?: InputMaybe<Scalars['String']['input']>;
+  search?: InputMaybe<Scalars['String']['input']>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+  sortBy?: InputMaybe<Array<SortFilesBy>>;
+  where?: InputMaybe<FileWhereInput>;
 };
 
 
@@ -88979,54 +88920,6 @@ export enum SortCallRecordsBy {
   VDesc = 'v_DESC'
 }
 
-export enum SortCondoFileHistoryRecordsBy {
-  AttachAsc = 'attach_ASC',
-  AttachDesc = 'attach_DESC',
-  CreatedAtAsc = 'createdAt_ASC',
-  CreatedAtDesc = 'createdAt_DESC',
-  DeletedAtAsc = 'deletedAt_ASC',
-  DeletedAtDesc = 'deletedAt_DESC',
-  DvAsc = 'dv_ASC',
-  DvDesc = 'dv_DESC',
-  HistoryActionAsc = 'history_action_ASC',
-  HistoryActionDesc = 'history_action_DESC',
-  HistoryDateAsc = 'history_date_ASC',
-  HistoryDateDesc = 'history_date_DESC',
-  IdAsc = 'id_ASC',
-  IdDesc = 'id_DESC',
-  SignatureAsc = 'signature_ASC',
-  SignatureDesc = 'signature_DESC',
-  UpdatedAtAsc = 'updatedAt_ASC',
-  UpdatedAtDesc = 'updatedAt_DESC',
-  VAsc = 'v_ASC',
-  VDesc = 'v_DESC'
-}
-
-export enum SortCondoFilesBy {
-  AttachAsc = 'attach_ASC',
-  AttachDesc = 'attach_DESC',
-  CreatedAtAsc = 'createdAt_ASC',
-  CreatedAtDesc = 'createdAt_DESC',
-  CreatedByAsc = 'createdBy_ASC',
-  CreatedByDesc = 'createdBy_DESC',
-  DeletedAtAsc = 'deletedAt_ASC',
-  DeletedAtDesc = 'deletedAt_DESC',
-  DvAsc = 'dv_ASC',
-  DvDesc = 'dv_DESC',
-  IdAsc = 'id_ASC',
-  IdDesc = 'id_DESC',
-  SignatureAsc = 'signature_ASC',
-  SignatureDesc = 'signature_DESC',
-  UpdatedAtAsc = 'updatedAt_ASC',
-  UpdatedAtDesc = 'updatedAt_DESC',
-  UpdatedByAsc = 'updatedBy_ASC',
-  UpdatedByDesc = 'updatedBy_DESC',
-  UserAsc = 'user_ASC',
-  UserDesc = 'user_DESC',
-  VAsc = 'v_ASC',
-  VDesc = 'v_DESC'
-}
-
 export enum SortConfirmEmailActionHistoryRecordsBy {
   CompletedAtAsc = 'completedAt_ASC',
   CompletedAtDesc = 'completedAt_DESC',
@@ -89683,6 +89576,46 @@ export enum SortExternalTokenAccessRightsBy {
   IdDesc = 'id_DESC',
   TypeAsc = 'type_ASC',
   TypeDesc = 'type_DESC',
+  UpdatedAtAsc = 'updatedAt_ASC',
+  UpdatedAtDesc = 'updatedAt_DESC',
+  UpdatedByAsc = 'updatedBy_ASC',
+  UpdatedByDesc = 'updatedBy_DESC',
+  UserAsc = 'user_ASC',
+  UserDesc = 'user_DESC',
+  VAsc = 'v_ASC',
+  VDesc = 'v_DESC'
+}
+
+export enum SortFileHistoryRecordsBy {
+  CreatedAtAsc = 'createdAt_ASC',
+  CreatedAtDesc = 'createdAt_DESC',
+  DeletedAtAsc = 'deletedAt_ASC',
+  DeletedAtDesc = 'deletedAt_DESC',
+  DvAsc = 'dv_ASC',
+  DvDesc = 'dv_DESC',
+  HistoryActionAsc = 'history_action_ASC',
+  HistoryActionDesc = 'history_action_DESC',
+  HistoryDateAsc = 'history_date_ASC',
+  HistoryDateDesc = 'history_date_DESC',
+  IdAsc = 'id_ASC',
+  IdDesc = 'id_DESC',
+  UpdatedAtAsc = 'updatedAt_ASC',
+  UpdatedAtDesc = 'updatedAt_DESC',
+  VAsc = 'v_ASC',
+  VDesc = 'v_DESC'
+}
+
+export enum SortFilesBy {
+  CreatedAtAsc = 'createdAt_ASC',
+  CreatedAtDesc = 'createdAt_DESC',
+  CreatedByAsc = 'createdBy_ASC',
+  CreatedByDesc = 'createdBy_DESC',
+  DeletedAtAsc = 'deletedAt_ASC',
+  DeletedAtDesc = 'deletedAt_DESC',
+  DvAsc = 'dv_ASC',
+  DvDesc = 'dv_DESC',
+  IdAsc = 'id_ASC',
+  IdDesc = 'id_DESC',
   UpdatedAtAsc = 'updatedAt_ASC',
   UpdatedAtDesc = 'updatedAt_DESC',
   UpdatedByAsc = 'updatedBy_ASC',

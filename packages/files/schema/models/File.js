@@ -1,18 +1,13 @@
 const { historical, versioned, uuided, tracked, softDeleted, dvAndSender } = require('@open-condo/keystone/plugins')
 const { GQLListSchema } = require('@open-condo/keystone/schema')
 
-const CondoFile = new GQLListSchema('CondoFile', {
-    schemaDoc: 'File uploaded to platform and meta with ownership data',
+const File = new GQLListSchema('File', {
+    schemaDoc: 'Stores uploaded file meta data and owner',
     fields: {
-        file: {
+        fileMeta: {
             type: 'Json',
             isRequired: true,
-            schemaDoc: 'File uploaded to platform',
-        },
-        signature: {
-            type: 'Text',
-            isRequired: true,
-            schemaDoc: 'File signature created from user and storage meta and application secret',
+            schemaDoc: 'Metadata of the file, that was uploaded to platform',
         },
         user: {
             type: 'Relationship',
@@ -22,13 +17,6 @@ const CondoFile = new GQLListSchema('CondoFile', {
             knexOptions: { isNotNullable: true },
             kmigratorOptions: { null: false, on_delete: 'models.PROTECT' },
         },
-        attach: {
-            type: 'Checkbox',
-            schemaDoc: 'Indicates that this file has been connected to one or more entity',
-            isRequired: false,
-            defaultValue: false,
-            knexOptions: { isNotNullable: false },
-        },
     },
     plugins: [uuided(), versioned(), tracked(), softDeleted(), dvAndSender(), historical()],
     access: {
@@ -36,8 +24,8 @@ const CondoFile = new GQLListSchema('CondoFile', {
         create: false,
         update: false,
         delete: false,
-        auth: true,
+        auth: false,
     },
 })
 
-module.exports = { CondoFile }
+module.exports = { File }
