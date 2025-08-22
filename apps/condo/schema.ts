@@ -27896,15 +27896,27 @@ export enum FeedbackAdditionalOptionsType {
   Slowly = 'slowly'
 }
 
-/**  Stores uploaded file meta data and owner  */
 export type File = {
   __typename?: 'File';
+  encoding?: Maybe<Scalars['String']['output']>;
+  filename?: Maybe<Scalars['String']['output']>;
+  id?: Maybe<Scalars['ID']['output']>;
+  meta?: Maybe<Scalars['JSON']['output']>;
+  mimetype?: Maybe<Scalars['String']['output']>;
+  originalFilename?: Maybe<Scalars['String']['output']>;
+  path?: Maybe<Scalars['String']['output']>;
+  publicUrl?: Maybe<Scalars['String']['output']>;
+};
+
+/**  Stores uploaded file meta data and owner  */
+export type FileRecord = {
+  __typename?: 'FileRecord';
   /**
    * This virtual field will be resolved in one of the following ways (in this order):
-   *  1. Execution of 'labelResolver' set on the File List config, or
-   *  2. As an alias to the field set on 'labelField' in the File List config, or
-   *  3. As an alias to a 'name' field on the File List (if one exists), or
-   *  4. As an alias to the 'id' field on the File List.
+   *  1. Execution of 'labelResolver' set on the FileRecord List config, or
+   *  2. As an alias to the field set on 'labelField' in the FileRecord List config, or
+   *  3. As an alias to a 'name' field on the FileRecord List (if one exists), or
+   *  4. As an alias to the 'id' field on the FileRecord List.
    */
   _label_?: Maybe<Scalars['String']['output']>;
   createdAt?: Maybe<Scalars['String']['output']>;
@@ -27913,17 +27925,10 @@ export type File = {
   deletedAt?: Maybe<Scalars['String']['output']>;
   /**  Data structure Version  */
   dv?: Maybe<Scalars['Int']['output']>;
-  encoding?: Maybe<Scalars['String']['output']>;
   /**  Metadata of the file, that was uploaded to platform  */
   fileMeta?: Maybe<Scalars['JSON']['output']>;
-  filename?: Maybe<Scalars['String']['output']>;
   id: Scalars['ID']['output'];
-  meta?: Maybe<Scalars['JSON']['output']>;
-  mimetype?: Maybe<Scalars['String']['output']>;
   newId?: Maybe<Scalars['String']['output']>;
-  originalFilename?: Maybe<Scalars['String']['output']>;
-  path?: Maybe<Scalars['String']['output']>;
-  publicUrl?: Maybe<Scalars['String']['output']>;
   /**  Client-side device identification used for the anti-fraud detection. Example `{ "dv":1, "fingerprint":"VaxSw2aXZa"}`. Where the `fingerprint` should be the same for the same devices and it's not linked to the user ID. It's the device ID like browser / mobile application / remote system  */
   sender?: Maybe<SenderField>;
   updatedAt?: Maybe<Scalars['String']['output']>;
@@ -27934,7 +27939,7 @@ export type File = {
   v?: Maybe<Scalars['Int']['output']>;
 };
 
-export type FileCreateInput = {
+export type FileRecordCreateInput = {
   createdAt?: InputMaybe<Scalars['String']['input']>;
   createdBy?: InputMaybe<UserRelateToOneInput>;
   deletedAt?: InputMaybe<Scalars['String']['input']>;
@@ -27949,14 +27954,14 @@ export type FileCreateInput = {
 };
 
 /**  A keystone list  */
-export type FileHistoryRecord = {
-  __typename?: 'FileHistoryRecord';
+export type FileRecordHistoryRecord = {
+  __typename?: 'FileRecordHistoryRecord';
   /**
    * This virtual field will be resolved in one of the following ways (in this order):
-   *  1. Execution of 'labelResolver' set on the FileHistoryRecord List config, or
-   *  2. As an alias to the field set on 'labelField' in the FileHistoryRecord List config, or
-   *  3. As an alias to a 'name' field on the FileHistoryRecord List (if one exists), or
-   *  4. As an alias to the 'id' field on the FileHistoryRecord List.
+   *  1. Execution of 'labelResolver' set on the FileRecordHistoryRecord List config, or
+   *  2. As an alias to the field set on 'labelField' in the FileRecordHistoryRecord List config, or
+   *  3. As an alias to a 'name' field on the FileRecordHistoryRecord List (if one exists), or
+   *  4. As an alias to the 'id' field on the FileRecordHistoryRecord List.
    */
   _label_?: Maybe<Scalars['String']['output']>;
   createdAt?: Maybe<Scalars['String']['output']>;
@@ -27964,7 +27969,7 @@ export type FileHistoryRecord = {
   deletedAt?: Maybe<Scalars['String']['output']>;
   dv?: Maybe<Scalars['Int']['output']>;
   fileMeta?: Maybe<Scalars['JSON']['output']>;
-  history_action?: Maybe<FileHistoryRecordHistoryActionType>;
+  history_action?: Maybe<FileRecordHistoryRecordHistoryActionType>;
   history_date?: Maybe<Scalars['String']['output']>;
   history_id?: Maybe<Scalars['String']['output']>;
   id: Scalars['ID']['output'];
@@ -27976,13 +27981,13 @@ export type FileHistoryRecord = {
   v?: Maybe<Scalars['Int']['output']>;
 };
 
-export type FileHistoryRecordCreateInput = {
+export type FileRecordHistoryRecordCreateInput = {
   createdAt?: InputMaybe<Scalars['String']['input']>;
   createdBy?: InputMaybe<Scalars['String']['input']>;
   deletedAt?: InputMaybe<Scalars['String']['input']>;
   dv?: InputMaybe<Scalars['Int']['input']>;
   fileMeta?: InputMaybe<Scalars['JSON']['input']>;
-  history_action?: InputMaybe<FileHistoryRecordHistoryActionType>;
+  history_action?: InputMaybe<FileRecordHistoryRecordHistoryActionType>;
   history_date?: InputMaybe<Scalars['String']['input']>;
   history_id?: InputMaybe<Scalars['String']['input']>;
   newId?: InputMaybe<Scalars['JSON']['input']>;
@@ -27993,19 +27998,19 @@ export type FileHistoryRecordCreateInput = {
   v?: InputMaybe<Scalars['Int']['input']>;
 };
 
-export enum FileHistoryRecordHistoryActionType {
+export enum FileRecordHistoryRecordHistoryActionType {
   C = 'c',
   D = 'd',
   U = 'u'
 }
 
-export type FileHistoryRecordUpdateInput = {
+export type FileRecordHistoryRecordUpdateInput = {
   createdAt?: InputMaybe<Scalars['String']['input']>;
   createdBy?: InputMaybe<Scalars['String']['input']>;
   deletedAt?: InputMaybe<Scalars['String']['input']>;
   dv?: InputMaybe<Scalars['Int']['input']>;
   fileMeta?: InputMaybe<Scalars['JSON']['input']>;
-  history_action?: InputMaybe<FileHistoryRecordHistoryActionType>;
+  history_action?: InputMaybe<FileRecordHistoryRecordHistoryActionType>;
   history_date?: InputMaybe<Scalars['String']['input']>;
   history_id?: InputMaybe<Scalars['String']['input']>;
   newId?: InputMaybe<Scalars['JSON']['input']>;
@@ -28016,9 +28021,9 @@ export type FileHistoryRecordUpdateInput = {
   v?: InputMaybe<Scalars['Int']['input']>;
 };
 
-export type FileHistoryRecordWhereInput = {
-  AND?: InputMaybe<Array<InputMaybe<FileHistoryRecordWhereInput>>>;
-  OR?: InputMaybe<Array<InputMaybe<FileHistoryRecordWhereInput>>>;
+export type FileRecordHistoryRecordWhereInput = {
+  AND?: InputMaybe<Array<InputMaybe<FileRecordHistoryRecordWhereInput>>>;
+  OR?: InputMaybe<Array<InputMaybe<FileRecordHistoryRecordWhereInput>>>;
   createdAt?: InputMaybe<Scalars['String']['input']>;
   createdAt_gt?: InputMaybe<Scalars['String']['input']>;
   createdAt_gte?: InputMaybe<Scalars['String']['input']>;
@@ -28051,10 +28056,10 @@ export type FileHistoryRecordWhereInput = {
   fileMeta_in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
   fileMeta_not?: InputMaybe<Scalars['JSON']['input']>;
   fileMeta_not_in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
-  history_action?: InputMaybe<FileHistoryRecordHistoryActionType>;
-  history_action_in?: InputMaybe<Array<InputMaybe<FileHistoryRecordHistoryActionType>>>;
-  history_action_not?: InputMaybe<FileHistoryRecordHistoryActionType>;
-  history_action_not_in?: InputMaybe<Array<InputMaybe<FileHistoryRecordHistoryActionType>>>;
+  history_action?: InputMaybe<FileRecordHistoryRecordHistoryActionType>;
+  history_action_in?: InputMaybe<Array<InputMaybe<FileRecordHistoryRecordHistoryActionType>>>;
+  history_action_not?: InputMaybe<FileRecordHistoryRecordHistoryActionType>;
+  history_action_not_in?: InputMaybe<Array<InputMaybe<FileRecordHistoryRecordHistoryActionType>>>;
   history_date?: InputMaybe<Scalars['String']['input']>;
   history_date_gt?: InputMaybe<Scalars['String']['input']>;
   history_date_gte?: InputMaybe<Scalars['String']['input']>;
@@ -28105,20 +28110,20 @@ export type FileHistoryRecordWhereInput = {
   v_not_in?: InputMaybe<Array<InputMaybe<Scalars['Int']['input']>>>;
 };
 
-export type FileHistoryRecordWhereUniqueInput = {
+export type FileRecordHistoryRecordWhereUniqueInput = {
   id: Scalars['ID']['input'];
 };
 
-export type FileHistoryRecordsCreateInput = {
-  data?: InputMaybe<FileHistoryRecordCreateInput>;
+export type FileRecordHistoryRecordsCreateInput = {
+  data?: InputMaybe<FileRecordHistoryRecordCreateInput>;
 };
 
-export type FileHistoryRecordsUpdateInput = {
-  data?: InputMaybe<FileHistoryRecordUpdateInput>;
+export type FileRecordHistoryRecordsUpdateInput = {
+  data?: InputMaybe<FileRecordHistoryRecordUpdateInput>;
   id: Scalars['ID']['input'];
 };
 
-export type FileUpdateInput = {
+export type FileRecordUpdateInput = {
   createdAt?: InputMaybe<Scalars['String']['input']>;
   createdBy?: InputMaybe<UserRelateToOneInput>;
   deletedAt?: InputMaybe<Scalars['String']['input']>;
@@ -28132,9 +28137,9 @@ export type FileUpdateInput = {
   v?: InputMaybe<Scalars['Int']['input']>;
 };
 
-export type FileWhereInput = {
-  AND?: InputMaybe<Array<InputMaybe<FileWhereInput>>>;
-  OR?: InputMaybe<Array<InputMaybe<FileWhereInput>>>;
+export type FileRecordWhereInput = {
+  AND?: InputMaybe<Array<InputMaybe<FileRecordWhereInput>>>;
+  OR?: InputMaybe<Array<InputMaybe<FileRecordWhereInput>>>;
   createdAt?: InputMaybe<Scalars['String']['input']>;
   createdAt_gt?: InputMaybe<Scalars['String']['input']>;
   createdAt_gte?: InputMaybe<Scalars['String']['input']>;
@@ -28199,16 +28204,16 @@ export type FileWhereInput = {
   v_not_in?: InputMaybe<Array<InputMaybe<Scalars['Int']['input']>>>;
 };
 
-export type FileWhereUniqueInput = {
+export type FileRecordWhereUniqueInput = {
   id: Scalars['ID']['input'];
 };
 
-export type FilesCreateInput = {
-  data?: InputMaybe<FileCreateInput>;
+export type FileRecordsCreateInput = {
+  data?: InputMaybe<FileRecordCreateInput>;
 };
 
-export type FilesUpdateInput = {
-  data?: InputMaybe<FileUpdateInput>;
+export type FileRecordsUpdateInput = {
+  data?: InputMaybe<FileRecordUpdateInput>;
   id: Scalars['ID']['input'];
 };
 
@@ -44110,14 +44115,14 @@ export type Mutation = {
   createExternalTokenAccessRightHistoryRecords?: Maybe<Array<Maybe<ExternalTokenAccessRightHistoryRecord>>>;
   /**  Create multiple ExternalTokenAccessRight items.  */
   createExternalTokenAccessRights?: Maybe<Array<Maybe<ExternalTokenAccessRight>>>;
-  /**  Create a single File item.  */
-  createFile?: Maybe<File>;
-  /**  Create a single FileHistoryRecord item.  */
-  createFileHistoryRecord?: Maybe<FileHistoryRecord>;
-  /**  Create multiple FileHistoryRecord items.  */
-  createFileHistoryRecords?: Maybe<Array<Maybe<FileHistoryRecord>>>;
-  /**  Create multiple File items.  */
-  createFiles?: Maybe<Array<Maybe<File>>>;
+  /**  Create a single FileRecord item.  */
+  createFileRecord?: Maybe<FileRecord>;
+  /**  Create a single FileRecordHistoryRecord item.  */
+  createFileRecordHistoryRecord?: Maybe<FileRecordHistoryRecord>;
+  /**  Create multiple FileRecordHistoryRecord items.  */
+  createFileRecordHistoryRecords?: Maybe<Array<Maybe<FileRecordHistoryRecord>>>;
+  /**  Create multiple FileRecord items.  */
+  createFileRecords?: Maybe<Array<Maybe<FileRecord>>>;
   /**  Create a single FindOrganizationsByTinLog item.  */
   createFindOrganizationsByTinLog?: Maybe<FindOrganizationsByTinLog>;
   /**  Create multiple FindOrganizationsByTinLog items.  */
@@ -45255,14 +45260,14 @@ export type Mutation = {
   deleteExternalTokenAccessRightHistoryRecords?: Maybe<Array<Maybe<ExternalTokenAccessRightHistoryRecord>>>;
   /**  Delete multiple ExternalTokenAccessRight items by ID.  */
   deleteExternalTokenAccessRights?: Maybe<Array<Maybe<ExternalTokenAccessRight>>>;
-  /**  Delete a single File item by ID.  */
-  deleteFile?: Maybe<File>;
-  /**  Delete a single FileHistoryRecord item by ID.  */
-  deleteFileHistoryRecord?: Maybe<FileHistoryRecord>;
-  /**  Delete multiple FileHistoryRecord items by ID.  */
-  deleteFileHistoryRecords?: Maybe<Array<Maybe<FileHistoryRecord>>>;
-  /**  Delete multiple File items by ID.  */
-  deleteFiles?: Maybe<Array<Maybe<File>>>;
+  /**  Delete a single FileRecord item by ID.  */
+  deleteFileRecord?: Maybe<FileRecord>;
+  /**  Delete a single FileRecordHistoryRecord item by ID.  */
+  deleteFileRecordHistoryRecord?: Maybe<FileRecordHistoryRecord>;
+  /**  Delete multiple FileRecordHistoryRecord items by ID.  */
+  deleteFileRecordHistoryRecords?: Maybe<Array<Maybe<FileRecordHistoryRecord>>>;
+  /**  Delete multiple FileRecord items by ID.  */
+  deleteFileRecords?: Maybe<Array<Maybe<FileRecord>>>;
   /**  Delete a single FindOrganizationsByTinLog item by ID.  */
   deleteFindOrganizationsByTinLog?: Maybe<FindOrganizationsByTinLog>;
   /**  Delete multiple FindOrganizationsByTinLog items by ID.  */
@@ -49429,14 +49434,14 @@ export type Mutation = {
   updateExternalTokenAccessRightHistoryRecords?: Maybe<Array<Maybe<ExternalTokenAccessRightHistoryRecord>>>;
   /**  Update multiple ExternalTokenAccessRight items by ID.  */
   updateExternalTokenAccessRights?: Maybe<Array<Maybe<ExternalTokenAccessRight>>>;
-  /**  Update a single File item by ID.  */
-  updateFile?: Maybe<File>;
-  /**  Update a single FileHistoryRecord item by ID.  */
-  updateFileHistoryRecord?: Maybe<FileHistoryRecord>;
-  /**  Update multiple FileHistoryRecord items by ID.  */
-  updateFileHistoryRecords?: Maybe<Array<Maybe<FileHistoryRecord>>>;
-  /**  Update multiple File items by ID.  */
-  updateFiles?: Maybe<Array<Maybe<File>>>;
+  /**  Update a single FileRecord item by ID.  */
+  updateFileRecord?: Maybe<FileRecord>;
+  /**  Update a single FileRecordHistoryRecord item by ID.  */
+  updateFileRecordHistoryRecord?: Maybe<FileRecordHistoryRecord>;
+  /**  Update multiple FileRecordHistoryRecord items by ID.  */
+  updateFileRecordHistoryRecords?: Maybe<Array<Maybe<FileRecordHistoryRecord>>>;
+  /**  Update multiple FileRecord items by ID.  */
+  updateFileRecords?: Maybe<Array<Maybe<FileRecord>>>;
   /**  Update a single FindOrganizationsByTinLog item by ID.  */
   updateFindOrganizationsByTinLog?: Maybe<FindOrganizationsByTinLog>;
   /**  Update multiple FindOrganizationsByTinLog items by ID.  */
@@ -51356,23 +51361,23 @@ export type MutationCreateExternalTokenAccessRightsArgs = {
 };
 
 
-export type MutationCreateFileArgs = {
-  data?: InputMaybe<FileCreateInput>;
+export type MutationCreateFileRecordArgs = {
+  data?: InputMaybe<FileRecordCreateInput>;
 };
 
 
-export type MutationCreateFileHistoryRecordArgs = {
-  data?: InputMaybe<FileHistoryRecordCreateInput>;
+export type MutationCreateFileRecordHistoryRecordArgs = {
+  data?: InputMaybe<FileRecordHistoryRecordCreateInput>;
 };
 
 
-export type MutationCreateFileHistoryRecordsArgs = {
-  data?: InputMaybe<Array<InputMaybe<FileHistoryRecordsCreateInput>>>;
+export type MutationCreateFileRecordHistoryRecordsArgs = {
+  data?: InputMaybe<Array<InputMaybe<FileRecordHistoryRecordsCreateInput>>>;
 };
 
 
-export type MutationCreateFilesArgs = {
-  data?: InputMaybe<Array<InputMaybe<FilesCreateInput>>>;
+export type MutationCreateFileRecordsArgs = {
+  data?: InputMaybe<Array<InputMaybe<FileRecordsCreateInput>>>;
 };
 
 
@@ -54221,22 +54226,22 @@ export type MutationDeleteExternalTokenAccessRightsArgs = {
 };
 
 
-export type MutationDeleteFileArgs = {
+export type MutationDeleteFileRecordArgs = {
   id: Scalars['ID']['input'];
 };
 
 
-export type MutationDeleteFileHistoryRecordArgs = {
+export type MutationDeleteFileRecordHistoryRecordArgs = {
   id: Scalars['ID']['input'];
 };
 
 
-export type MutationDeleteFileHistoryRecordsArgs = {
+export type MutationDeleteFileRecordHistoryRecordsArgs = {
   ids?: InputMaybe<Array<Scalars['ID']['input']>>;
 };
 
 
-export type MutationDeleteFilesArgs = {
+export type MutationDeleteFileRecordsArgs = {
   ids?: InputMaybe<Array<Scalars['ID']['input']>>;
 };
 
@@ -57409,25 +57414,25 @@ export type MutationUpdateExternalTokenAccessRightsArgs = {
 };
 
 
-export type MutationUpdateFileArgs = {
-  data?: InputMaybe<FileUpdateInput>;
+export type MutationUpdateFileRecordArgs = {
+  data?: InputMaybe<FileRecordUpdateInput>;
   id: Scalars['ID']['input'];
 };
 
 
-export type MutationUpdateFileHistoryRecordArgs = {
-  data?: InputMaybe<FileHistoryRecordUpdateInput>;
+export type MutationUpdateFileRecordHistoryRecordArgs = {
+  data?: InputMaybe<FileRecordHistoryRecordUpdateInput>;
   id: Scalars['ID']['input'];
 };
 
 
-export type MutationUpdateFileHistoryRecordsArgs = {
-  data?: InputMaybe<Array<InputMaybe<FileHistoryRecordsUpdateInput>>>;
+export type MutationUpdateFileRecordHistoryRecordsArgs = {
+  data?: InputMaybe<Array<InputMaybe<FileRecordHistoryRecordsUpdateInput>>>;
 };
 
 
-export type MutationUpdateFilesArgs = {
-  data?: InputMaybe<Array<InputMaybe<FilesUpdateInput>>>;
+export type MutationUpdateFileRecordsArgs = {
+  data?: InputMaybe<Array<InputMaybe<FileRecordsUpdateInput>>>;
 };
 
 
@@ -72285,10 +72290,10 @@ export type Query = {
   ExternalTokenAccessRight?: Maybe<ExternalTokenAccessRight>;
   /**  Search for the ExternalTokenAccessRightHistoryRecord item with the matching ID.  */
   ExternalTokenAccessRightHistoryRecord?: Maybe<ExternalTokenAccessRightHistoryRecord>;
-  /**  Search for the File item with the matching ID.  */
-  File?: Maybe<File>;
-  /**  Search for the FileHistoryRecord item with the matching ID.  */
-  FileHistoryRecord?: Maybe<FileHistoryRecord>;
+  /**  Search for the FileRecord item with the matching ID.  */
+  FileRecord?: Maybe<FileRecord>;
+  /**  Search for the FileRecordHistoryRecord item with the matching ID.  */
+  FileRecordHistoryRecord?: Maybe<FileRecordHistoryRecord>;
   /**  Search for the FindOrganizationsByTinLog item with the matching ID.  */
   FindOrganizationsByTinLog?: Maybe<FindOrganizationsByTinLog>;
   /**  Search for the Incident item with the matching ID.  */
@@ -72857,10 +72862,10 @@ export type Query = {
   _ExternalTokenAccessRightHistoryRecordsMeta?: Maybe<_ListMeta>;
   /**  Retrieve the meta-data for the ExternalTokenAccessRight list.  */
   _ExternalTokenAccessRightsMeta?: Maybe<_ListMeta>;
-  /**  Retrieve the meta-data for the FileHistoryRecord list.  */
-  _FileHistoryRecordsMeta?: Maybe<_ListMeta>;
-  /**  Retrieve the meta-data for the File list.  */
-  _FilesMeta?: Maybe<_ListMeta>;
+  /**  Retrieve the meta-data for the FileRecordHistoryRecord list.  */
+  _FileRecordHistoryRecordsMeta?: Maybe<_ListMeta>;
+  /**  Retrieve the meta-data for the FileRecord list.  */
+  _FileRecordsMeta?: Maybe<_ListMeta>;
   /**  Retrieve the meta-data for the FindOrganizationsByTinLog list.  */
   _FindOrganizationsByTinLogsMeta?: Maybe<_ListMeta>;
   /**  Retrieve the meta-data for the IncidentChange list.  */
@@ -73451,10 +73456,10 @@ export type Query = {
   _allExternalTokenAccessRightHistoryRecordsMeta?: Maybe<_QueryMeta>;
   /**  Perform a meta-query on all ExternalTokenAccessRight items which match the where clause.  */
   _allExternalTokenAccessRightsMeta?: Maybe<_QueryMeta>;
-  /**  Perform a meta-query on all FileHistoryRecord items which match the where clause.  */
-  _allFileHistoryRecordsMeta?: Maybe<_QueryMeta>;
-  /**  Perform a meta-query on all File items which match the where clause.  */
-  _allFilesMeta?: Maybe<_QueryMeta>;
+  /**  Perform a meta-query on all FileRecordHistoryRecord items which match the where clause.  */
+  _allFileRecordHistoryRecordsMeta?: Maybe<_QueryMeta>;
+  /**  Perform a meta-query on all FileRecord items which match the where clause.  */
+  _allFileRecordsMeta?: Maybe<_QueryMeta>;
   /**  Perform a meta-query on all FindOrganizationsByTinLog items which match the where clause.  */
   _allFindOrganizationsByTinLogsMeta?: Maybe<_QueryMeta>;
   /**  Perform a meta-query on all IncidentChange items which match the where clause.  */
@@ -74053,10 +74058,10 @@ export type Query = {
   allExternalTokenAccessRightHistoryRecords?: Maybe<Array<Maybe<ExternalTokenAccessRightHistoryRecord>>>;
   /**  Search for all ExternalTokenAccessRight items which match the where clause.  */
   allExternalTokenAccessRights?: Maybe<Array<Maybe<ExternalTokenAccessRight>>>;
-  /**  Search for all FileHistoryRecord items which match the where clause.  */
-  allFileHistoryRecords?: Maybe<Array<Maybe<FileHistoryRecord>>>;
-  /**  Search for all File items which match the where clause.  */
-  allFiles?: Maybe<Array<Maybe<File>>>;
+  /**  Search for all FileRecordHistoryRecord items which match the where clause.  */
+  allFileRecordHistoryRecords?: Maybe<Array<Maybe<FileRecordHistoryRecord>>>;
+  /**  Search for all FileRecord items which match the where clause.  */
+  allFileRecords?: Maybe<Array<Maybe<FileRecord>>>;
   /**  Search for all FindOrganizationsByTinLog items which match the where clause.  */
   allFindOrganizationsByTinLogs?: Maybe<Array<Maybe<FindOrganizationsByTinLog>>>;
   /**  Search for all IncidentChange items which match the where clause.  */
@@ -75204,13 +75209,13 @@ export type QueryExternalTokenAccessRightHistoryRecordArgs = {
 };
 
 
-export type QueryFileArgs = {
-  where: FileWhereUniqueInput;
+export type QueryFileRecordArgs = {
+  where: FileRecordWhereUniqueInput;
 };
 
 
-export type QueryFileHistoryRecordArgs = {
-  where: FileHistoryRecordWhereUniqueInput;
+export type QueryFileRecordHistoryRecordArgs = {
+  where: FileRecordHistoryRecordWhereUniqueInput;
 };
 
 
@@ -77154,23 +77159,23 @@ export type Query_AllExternalTokenAccessRightsMetaArgs = {
 };
 
 
-export type Query_AllFileHistoryRecordsMetaArgs = {
+export type Query_AllFileRecordHistoryRecordsMetaArgs = {
   first?: InputMaybe<Scalars['Int']['input']>;
   orderBy?: InputMaybe<Scalars['String']['input']>;
   search?: InputMaybe<Scalars['String']['input']>;
   skip?: InputMaybe<Scalars['Int']['input']>;
-  sortBy?: InputMaybe<Array<SortFileHistoryRecordsBy>>;
-  where?: InputMaybe<FileHistoryRecordWhereInput>;
+  sortBy?: InputMaybe<Array<SortFileRecordHistoryRecordsBy>>;
+  where?: InputMaybe<FileRecordHistoryRecordWhereInput>;
 };
 
 
-export type Query_AllFilesMetaArgs = {
+export type Query_AllFileRecordsMetaArgs = {
   first?: InputMaybe<Scalars['Int']['input']>;
   orderBy?: InputMaybe<Scalars['String']['input']>;
   search?: InputMaybe<Scalars['String']['input']>;
   skip?: InputMaybe<Scalars['Int']['input']>;
-  sortBy?: InputMaybe<Array<SortFilesBy>>;
-  where?: InputMaybe<FileWhereInput>;
+  sortBy?: InputMaybe<Array<SortFileRecordsBy>>;
+  where?: InputMaybe<FileRecordWhereInput>;
 };
 
 
@@ -80024,23 +80029,23 @@ export type QueryAllExternalTokenAccessRightsArgs = {
 };
 
 
-export type QueryAllFileHistoryRecordsArgs = {
+export type QueryAllFileRecordHistoryRecordsArgs = {
   first?: InputMaybe<Scalars['Int']['input']>;
   orderBy?: InputMaybe<Scalars['String']['input']>;
   search?: InputMaybe<Scalars['String']['input']>;
   skip?: InputMaybe<Scalars['Int']['input']>;
-  sortBy?: InputMaybe<Array<SortFileHistoryRecordsBy>>;
-  where?: InputMaybe<FileHistoryRecordWhereInput>;
+  sortBy?: InputMaybe<Array<SortFileRecordHistoryRecordsBy>>;
+  where?: InputMaybe<FileRecordHistoryRecordWhereInput>;
 };
 
 
-export type QueryAllFilesArgs = {
+export type QueryAllFileRecordsArgs = {
   first?: InputMaybe<Scalars['Int']['input']>;
   orderBy?: InputMaybe<Scalars['String']['input']>;
   search?: InputMaybe<Scalars['String']['input']>;
   skip?: InputMaybe<Scalars['Int']['input']>;
-  sortBy?: InputMaybe<Array<SortFilesBy>>;
-  where?: InputMaybe<FileWhereInput>;
+  sortBy?: InputMaybe<Array<SortFileRecordsBy>>;
+  where?: InputMaybe<FileRecordWhereInput>;
 };
 
 
@@ -89586,7 +89591,7 @@ export enum SortExternalTokenAccessRightsBy {
   VDesc = 'v_DESC'
 }
 
-export enum SortFileHistoryRecordsBy {
+export enum SortFileRecordHistoryRecordsBy {
   CreatedAtAsc = 'createdAt_ASC',
   CreatedAtDesc = 'createdAt_DESC',
   DeletedAtAsc = 'deletedAt_ASC',
@@ -89605,7 +89610,7 @@ export enum SortFileHistoryRecordsBy {
   VDesc = 'v_DESC'
 }
 
-export enum SortFilesBy {
+export enum SortFileRecordsBy {
   CreatedAtAsc = 'createdAt_ASC',
   CreatedAtDesc = 'createdAt_DESC',
   CreatedByAsc = 'createdBy_ASC',
