@@ -27925,7 +27925,7 @@ export type FileRecord = {
   deletedAt?: Maybe<Scalars['String']['output']>;
   /**  Data structure Version  */
   dv?: Maybe<Scalars['Int']['output']>;
-  /**  Metadata of the file, that was uploaded to platform  */
+  /**  Information about file including its encoding, mime type, filename and user related metadata  */
   fileMeta?: Maybe<Scalars['JSON']['output']>;
   id: Scalars['ID']['output'];
   newId?: Maybe<Scalars['String']['output']>;
