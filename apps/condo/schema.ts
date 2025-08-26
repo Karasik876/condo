@@ -27925,6 +27925,8 @@ export type FileRecord = {
   deletedAt?: Maybe<Scalars['String']['output']>;
   /**  Data structure Version  */
   dv?: Maybe<Scalars['Int']['output']>;
+  /**  Unique identifier on the storage side (eg file adapter)  */
+  fileKey?: Maybe<Scalars['String']['output']>;
   /**  Information about file including its encoding, mime type, filename and user related metadata  */
   fileMeta?: Maybe<Scalars['JSON']['output']>;
   id: Scalars['ID']['output'];
@@ -27948,6 +27950,7 @@ export type FileRecordCreateInput = {
   createdBy?: InputMaybe<UserRelateToOneInput>;
   deletedAt?: InputMaybe<Scalars['String']['input']>;
   dv?: InputMaybe<Scalars['Int']['input']>;
+  fileKey?: InputMaybe<Scalars['String']['input']>;
   fileMeta?: InputMaybe<Scalars['JSON']['input']>;
   newId?: InputMaybe<Scalars['String']['input']>;
   sender?: InputMaybe<SenderFieldInput>;
@@ -27974,6 +27977,7 @@ export type FileRecordHistoryRecord = {
   createdBy?: Maybe<Scalars['String']['output']>;
   deletedAt?: Maybe<Scalars['String']['output']>;
   dv?: Maybe<Scalars['Int']['output']>;
+  fileKey?: Maybe<Scalars['String']['output']>;
   fileMeta?: Maybe<Scalars['JSON']['output']>;
   history_action?: Maybe<FileRecordHistoryRecordHistoryActionType>;
   history_date?: Maybe<Scalars['String']['output']>;
@@ -27994,6 +27998,7 @@ export type FileRecordHistoryRecordCreateInput = {
   createdBy?: InputMaybe<Scalars['String']['input']>;
   deletedAt?: InputMaybe<Scalars['String']['input']>;
   dv?: InputMaybe<Scalars['Int']['input']>;
+  fileKey?: InputMaybe<Scalars['String']['input']>;
   fileMeta?: InputMaybe<Scalars['JSON']['input']>;
   history_action?: InputMaybe<FileRecordHistoryRecordHistoryActionType>;
   history_date?: InputMaybe<Scalars['String']['input']>;
@@ -28019,6 +28024,7 @@ export type FileRecordHistoryRecordUpdateInput = {
   createdBy?: InputMaybe<Scalars['String']['input']>;
   deletedAt?: InputMaybe<Scalars['String']['input']>;
   dv?: InputMaybe<Scalars['Int']['input']>;
+  fileKey?: InputMaybe<Scalars['String']['input']>;
   fileMeta?: InputMaybe<Scalars['JSON']['input']>;
   history_action?: InputMaybe<FileRecordHistoryRecordHistoryActionType>;
   history_date?: InputMaybe<Scalars['String']['input']>;
@@ -28064,6 +28070,24 @@ export type FileRecordHistoryRecordWhereInput = {
   dv_lte?: InputMaybe<Scalars['Int']['input']>;
   dv_not?: InputMaybe<Scalars['Int']['input']>;
   dv_not_in?: InputMaybe<Array<InputMaybe<Scalars['Int']['input']>>>;
+  fileKey?: InputMaybe<Scalars['String']['input']>;
+  fileKey_contains?: InputMaybe<Scalars['String']['input']>;
+  fileKey_contains_i?: InputMaybe<Scalars['String']['input']>;
+  fileKey_ends_with?: InputMaybe<Scalars['String']['input']>;
+  fileKey_ends_with_i?: InputMaybe<Scalars['String']['input']>;
+  fileKey_i?: InputMaybe<Scalars['String']['input']>;
+  fileKey_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  fileKey_not?: InputMaybe<Scalars['String']['input']>;
+  fileKey_not_contains?: InputMaybe<Scalars['String']['input']>;
+  fileKey_not_contains_i?: InputMaybe<Scalars['String']['input']>;
+  fileKey_not_ends_with?: InputMaybe<Scalars['String']['input']>;
+  fileKey_not_ends_with_i?: InputMaybe<Scalars['String']['input']>;
+  fileKey_not_i?: InputMaybe<Scalars['String']['input']>;
+  fileKey_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  fileKey_not_starts_with?: InputMaybe<Scalars['String']['input']>;
+  fileKey_not_starts_with_i?: InputMaybe<Scalars['String']['input']>;
+  fileKey_starts_with?: InputMaybe<Scalars['String']['input']>;
+  fileKey_starts_with_i?: InputMaybe<Scalars['String']['input']>;
   fileMeta?: InputMaybe<Scalars['JSON']['input']>;
   fileMeta_in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
   fileMeta_not?: InputMaybe<Scalars['JSON']['input']>;
@@ -28169,6 +28193,7 @@ export type FileRecordUpdateInput = {
   createdBy?: InputMaybe<UserRelateToOneInput>;
   deletedAt?: InputMaybe<Scalars['String']['input']>;
   dv?: InputMaybe<Scalars['Int']['input']>;
+  fileKey?: InputMaybe<Scalars['String']['input']>;
   fileMeta?: InputMaybe<Scalars['JSON']['input']>;
   newId?: InputMaybe<Scalars['String']['input']>;
   sender?: InputMaybe<SenderFieldInput>;
@@ -28209,6 +28234,24 @@ export type FileRecordWhereInput = {
   dv_lte?: InputMaybe<Scalars['Int']['input']>;
   dv_not?: InputMaybe<Scalars['Int']['input']>;
   dv_not_in?: InputMaybe<Array<InputMaybe<Scalars['Int']['input']>>>;
+  fileKey?: InputMaybe<Scalars['String']['input']>;
+  fileKey_contains?: InputMaybe<Scalars['String']['input']>;
+  fileKey_contains_i?: InputMaybe<Scalars['String']['input']>;
+  fileKey_ends_with?: InputMaybe<Scalars['String']['input']>;
+  fileKey_ends_with_i?: InputMaybe<Scalars['String']['input']>;
+  fileKey_i?: InputMaybe<Scalars['String']['input']>;
+  fileKey_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  fileKey_not?: InputMaybe<Scalars['String']['input']>;
+  fileKey_not_contains?: InputMaybe<Scalars['String']['input']>;
+  fileKey_not_contains_i?: InputMaybe<Scalars['String']['input']>;
+  fileKey_not_ends_with?: InputMaybe<Scalars['String']['input']>;
+  fileKey_not_ends_with_i?: InputMaybe<Scalars['String']['input']>;
+  fileKey_not_i?: InputMaybe<Scalars['String']['input']>;
+  fileKey_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  fileKey_not_starts_with?: InputMaybe<Scalars['String']['input']>;
+  fileKey_not_starts_with_i?: InputMaybe<Scalars['String']['input']>;
+  fileKey_starts_with?: InputMaybe<Scalars['String']['input']>;
+  fileKey_starts_with_i?: InputMaybe<Scalars['String']['input']>;
   fileMeta?: InputMaybe<Scalars['JSON']['input']>;
   fileMeta_in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
   fileMeta_not?: InputMaybe<Scalars['JSON']['input']>;
@@ -89661,6 +89704,8 @@ export enum SortFileRecordHistoryRecordsBy {
   DeletedAtDesc = 'deletedAt_DESC',
   DvAsc = 'dv_ASC',
   DvDesc = 'dv_DESC',
+  FileKeyAsc = 'fileKey_ASC',
+  FileKeyDesc = 'fileKey_DESC',
   HistoryActionAsc = 'history_action_ASC',
   HistoryActionDesc = 'history_action_DESC',
   HistoryDateAsc = 'history_date_ASC',
@@ -89684,6 +89729,8 @@ export enum SortFileRecordsBy {
   DeletedAtDesc = 'deletedAt_DESC',
   DvAsc = 'dv_ASC',
   DvDesc = 'dv_DESC',
+  FileKeyAsc = 'fileKey_ASC',
+  FileKeyDesc = 'fileKey_DESC',
   IdAsc = 'id_ASC',
   IdDesc = 'id_DESC',
   SourceAppAsc = 'sourceApp_ASC',
