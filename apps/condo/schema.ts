@@ -27928,7 +27928,7 @@ export type FileRecord = {
   /**  Unique identifier on the storage side (eg file adapter)  */
   fileKey?: Maybe<Scalars['String']['output']>;
   /**  Information about file including its encoding, mime type, filename and user related metadata  */
-  fileMeta?: Maybe<Scalars['JSON']['output']>;
+  fileMeta?: Maybe<FileRecordMeta>;
   id: Scalars['ID']['output'];
   newId?: Maybe<Scalars['String']['output']>;
   /**  Client-side device identification used for the anti-fraud detection. Example `{ "dv":1, "fingerprint":"VaxSw2aXZa"}`. Where the `fingerprint` should be the same for the same devices and it's not linked to the user ID. It's the device ID like browser / mobile application / remote system  */
@@ -28181,6 +28181,17 @@ export type FileRecordHistoryRecordsUpdateInput = {
   id: Scalars['ID']['input'];
 };
 
+export type FileRecordMeta = {
+  __typename?: 'FileRecordMeta';
+  encoding: Scalars['String']['output'];
+  filename: Scalars['String']['output'];
+  id?: Maybe<Scalars['ID']['output']>;
+  meta: FileRecordUserMeta;
+  mimetype: Scalars['String']['output'];
+  originalFilename?: Maybe<Scalars['String']['output']>;
+  path?: Maybe<Scalars['String']['output']>;
+};
+
 export type FileRecordRelateToOneInput = {
   connect?: InputMaybe<FileRecordWhereUniqueInput>;
   create?: InputMaybe<FileRecordCreateInput>;
@@ -28203,6 +28214,17 @@ export type FileRecordUpdateInput = {
   updatedBy?: InputMaybe<UserRelateToOneInput>;
   user?: InputMaybe<UserRelateToOneInput>;
   v?: InputMaybe<Scalars['Int']['input']>;
+};
+
+export type FileRecordUserMeta = {
+  __typename?: 'FileRecordUserMeta';
+  appId: Scalars['String']['output'];
+  authedItem: Scalars['String']['output'];
+  dv: Scalars['Int']['output'];
+  fileAdapter?: Maybe<Scalars['String']['output']>;
+  modelNames: Array<Scalars['String']['output']>;
+  sender: FileSender;
+  sourceAppId?: Maybe<Scalars['String']['output']>;
 };
 
 export type FileRecordWhereInput = {
@@ -28321,6 +28343,12 @@ export type FileRecordsCreateInput = {
 export type FileRecordsUpdateInput = {
   data?: InputMaybe<FileRecordUpdateInput>;
   id: Scalars['ID']['input'];
+};
+
+export type FileSender = {
+  __typename?: 'FileSender';
+  dv: Scalars['Int']['output'];
+  fingerprint: Scalars['String']['output'];
 };
 
 export type FindOrganizationByAddressMeterType = {
