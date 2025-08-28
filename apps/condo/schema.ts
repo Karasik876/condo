@@ -28218,7 +28218,7 @@ export type FileRecordUpdateInput = {
 export type FileRecordUserMeta = {
   __typename?: 'FileRecordUserMeta';
   appId: Scalars['String']['output'];
-  authedItem: Scalars['String']['output'];
+  authedItemId: Scalars['ID']['output'];
   dv: Scalars['Int']['output'];
   fileAdapter?: Maybe<Scalars['String']['output']>;
   modelNames: Array<Scalars['String']['output']>;
