@@ -27936,7 +27936,7 @@ export type FileRecord = {
   /**  App id - used for final routing when original file was shared  */
   sourceApp?: Maybe<Scalars['String']['output']>;
   /**  Link to original FileRecord which was shared  */
-  sourceId?: Maybe<FileRecord>;
+  sourceFileRecord?: Maybe<FileRecord>;
   updatedAt?: Maybe<Scalars['String']['output']>;
   /**  Identifies a user, which has updated this record. It is a technical connection, that can represent real users, as well as automated systems (bots, scripts). This field should not participate in business logic.  */
   updatedBy?: Maybe<User>;
@@ -27955,7 +27955,7 @@ export type FileRecordCreateInput = {
   newId?: InputMaybe<Scalars['String']['input']>;
   sender?: InputMaybe<SenderFieldInput>;
   sourceApp?: InputMaybe<Scalars['String']['input']>;
-  sourceId?: InputMaybe<FileRecordRelateToOneInput>;
+  sourceFileRecord?: InputMaybe<FileRecordRelateToOneInput>;
   updatedAt?: InputMaybe<Scalars['String']['input']>;
   updatedBy?: InputMaybe<UserRelateToOneInput>;
   user?: InputMaybe<UserRelateToOneInput>;
@@ -27986,7 +27986,7 @@ export type FileRecordHistoryRecord = {
   newId?: Maybe<Scalars['JSON']['output']>;
   sender?: Maybe<Scalars['JSON']['output']>;
   sourceApp?: Maybe<Scalars['String']['output']>;
-  sourceId?: Maybe<Scalars['String']['output']>;
+  sourceFileRecord?: Maybe<Scalars['String']['output']>;
   updatedAt?: Maybe<Scalars['String']['output']>;
   updatedBy?: Maybe<Scalars['String']['output']>;
   user?: Maybe<Scalars['String']['output']>;
@@ -28006,7 +28006,7 @@ export type FileRecordHistoryRecordCreateInput = {
   newId?: InputMaybe<Scalars['JSON']['input']>;
   sender?: InputMaybe<Scalars['JSON']['input']>;
   sourceApp?: InputMaybe<Scalars['String']['input']>;
-  sourceId?: InputMaybe<Scalars['String']['input']>;
+  sourceFileRecord?: InputMaybe<Scalars['String']['input']>;
   updatedAt?: InputMaybe<Scalars['String']['input']>;
   updatedBy?: InputMaybe<Scalars['String']['input']>;
   user?: InputMaybe<Scalars['String']['input']>;
@@ -28032,7 +28032,7 @@ export type FileRecordHistoryRecordUpdateInput = {
   newId?: InputMaybe<Scalars['JSON']['input']>;
   sender?: InputMaybe<Scalars['JSON']['input']>;
   sourceApp?: InputMaybe<Scalars['String']['input']>;
-  sourceId?: InputMaybe<Scalars['String']['input']>;
+  sourceFileRecord?: InputMaybe<Scalars['String']['input']>;
   updatedAt?: InputMaybe<Scalars['String']['input']>;
   updatedBy?: InputMaybe<Scalars['String']['input']>;
   user?: InputMaybe<Scalars['String']['input']>;
@@ -28138,10 +28138,10 @@ export type FileRecordHistoryRecordWhereInput = {
   sourceApp_not_starts_with_i?: InputMaybe<Scalars['String']['input']>;
   sourceApp_starts_with?: InputMaybe<Scalars['String']['input']>;
   sourceApp_starts_with_i?: InputMaybe<Scalars['String']['input']>;
-  sourceId?: InputMaybe<Scalars['String']['input']>;
-  sourceId_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  sourceId_not?: InputMaybe<Scalars['String']['input']>;
-  sourceId_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  sourceFileRecord?: InputMaybe<Scalars['String']['input']>;
+  sourceFileRecord_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  sourceFileRecord_not?: InputMaybe<Scalars['String']['input']>;
+  sourceFileRecord_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   updatedAt?: InputMaybe<Scalars['String']['input']>;
   updatedAt_gt?: InputMaybe<Scalars['String']['input']>;
   updatedAt_gte?: InputMaybe<Scalars['String']['input']>;
@@ -28211,7 +28211,7 @@ export type FileRecordUpdateInput = {
   newId?: InputMaybe<Scalars['String']['input']>;
   sender?: InputMaybe<SenderFieldInput>;
   sourceApp?: InputMaybe<Scalars['String']['input']>;
-  sourceId?: InputMaybe<FileRecordRelateToOneInput>;
+  sourceFileRecord?: InputMaybe<FileRecordRelateToOneInput>;
   updatedAt?: InputMaybe<Scalars['String']['input']>;
   updatedBy?: InputMaybe<UserRelateToOneInput>;
   user?: InputMaybe<UserRelateToOneInput>;
@@ -28309,8 +28309,8 @@ export type FileRecordWhereInput = {
   sourceApp_not_starts_with_i?: InputMaybe<Scalars['String']['input']>;
   sourceApp_starts_with?: InputMaybe<Scalars['String']['input']>;
   sourceApp_starts_with_i?: InputMaybe<Scalars['String']['input']>;
-  sourceId?: InputMaybe<FileRecordWhereInput>;
-  sourceId_is_null?: InputMaybe<Scalars['Boolean']['input']>;
+  sourceFileRecord?: InputMaybe<FileRecordWhereInput>;
+  sourceFileRecord_is_null?: InputMaybe<Scalars['Boolean']['input']>;
   updatedAt?: InputMaybe<Scalars['String']['input']>;
   updatedAt_gt?: InputMaybe<Scalars['String']['input']>;
   updatedAt_gte?: InputMaybe<Scalars['String']['input']>;
@@ -89764,8 +89764,8 @@ export enum SortFileRecordsBy {
   IdDesc = 'id_DESC',
   SourceAppAsc = 'sourceApp_ASC',
   SourceAppDesc = 'sourceApp_DESC',
-  SourceIdAsc = 'sourceId_ASC',
-  SourceIdDesc = 'sourceId_DESC',
+  SourceFileRecordAsc = 'sourceFileRecord_ASC',
+  SourceFileRecordDesc = 'sourceFileRecord_DESC',
   UpdatedAtAsc = 'updatedAt_ASC',
   UpdatedAtDesc = 'updatedAt_DESC',
   UpdatedByAsc = 'updatedBy_ASC',
