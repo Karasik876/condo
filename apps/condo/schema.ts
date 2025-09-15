@@ -27908,6 +27908,19 @@ export type File = {
   publicUrl?: Maybe<Scalars['String']['output']>;
 };
 
+export type FileAttachment = {
+  __typename?: 'FileAttachment';
+  fileClientId: Scalars['String']['output'];
+  id: Scalars['ID']['output'];
+  modelName: Scalars['String']['output'];
+  user: Scalars['ID']['output'];
+};
+
+export type FileAttachments = {
+  __typename?: 'FileAttachments';
+  attachments: Array<FileAttachment>;
+};
+
 /**  Stores uploaded file meta data and owner  */
 export type FileRecord = {
   __typename?: 'FileRecord';
@@ -27919,6 +27932,8 @@ export type FileRecord = {
    *  4. As an alias to the 'id' field on the FileRecord List.
    */
   _label_?: Maybe<Scalars['String']['output']>;
+  /**  List of objects that stores info about which model, application and object is attached this binary  */
+  attachments?: Maybe<FileAttachments>;
   createdAt?: Maybe<Scalars['String']['output']>;
   /**  Identifies a user, which has created this record. It is a technical connection, that can represent real users, as well as automated systems (bots, scripts). This field should not participate in business logic.  */
   createdBy?: Maybe<User>;
@@ -27946,6 +27961,7 @@ export type FileRecord = {
 };
 
 export type FileRecordCreateInput = {
+  attachments?: InputMaybe<Scalars['JSON']['input']>;
   createdAt?: InputMaybe<Scalars['String']['input']>;
   createdBy?: InputMaybe<UserRelateToOneInput>;
   deletedAt?: InputMaybe<Scalars['String']['input']>;
@@ -27973,6 +27989,7 @@ export type FileRecordHistoryRecord = {
    *  4. As an alias to the 'id' field on the FileRecordHistoryRecord List.
    */
   _label_?: Maybe<Scalars['String']['output']>;
+  attachments?: Maybe<Scalars['JSON']['output']>;
   createdAt?: Maybe<Scalars['String']['output']>;
   createdBy?: Maybe<Scalars['String']['output']>;
   deletedAt?: Maybe<Scalars['String']['output']>;
@@ -27994,6 +28011,7 @@ export type FileRecordHistoryRecord = {
 };
 
 export type FileRecordHistoryRecordCreateInput = {
+  attachments?: InputMaybe<Scalars['JSON']['input']>;
   createdAt?: InputMaybe<Scalars['String']['input']>;
   createdBy?: InputMaybe<Scalars['String']['input']>;
   deletedAt?: InputMaybe<Scalars['String']['input']>;
@@ -28020,6 +28038,7 @@ export enum FileRecordHistoryRecordHistoryActionType {
 }
 
 export type FileRecordHistoryRecordUpdateInput = {
+  attachments?: InputMaybe<Scalars['JSON']['input']>;
   createdAt?: InputMaybe<Scalars['String']['input']>;
   createdBy?: InputMaybe<Scalars['String']['input']>;
   deletedAt?: InputMaybe<Scalars['String']['input']>;
@@ -28042,6 +28061,10 @@ export type FileRecordHistoryRecordUpdateInput = {
 export type FileRecordHistoryRecordWhereInput = {
   AND?: InputMaybe<Array<InputMaybe<FileRecordHistoryRecordWhereInput>>>;
   OR?: InputMaybe<Array<InputMaybe<FileRecordHistoryRecordWhereInput>>>;
+  attachments?: InputMaybe<Scalars['JSON']['input']>;
+  attachments_in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  attachments_not?: InputMaybe<Scalars['JSON']['input']>;
+  attachments_not_in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
   createdAt?: InputMaybe<Scalars['String']['input']>;
   createdAt_gt?: InputMaybe<Scalars['String']['input']>;
   createdAt_gte?: InputMaybe<Scalars['String']['input']>;
@@ -28202,6 +28225,7 @@ export type FileRecordRelateToOneInput = {
 };
 
 export type FileRecordUpdateInput = {
+  attachments?: InputMaybe<Scalars['JSON']['input']>;
   createdAt?: InputMaybe<Scalars['String']['input']>;
   createdBy?: InputMaybe<UserRelateToOneInput>;
   deletedAt?: InputMaybe<Scalars['String']['input']>;
@@ -28220,17 +28244,21 @@ export type FileRecordUpdateInput = {
 
 export type FileRecordUserMeta = {
   __typename?: 'FileRecordUserMeta';
-  appId: Scalars['String']['output'];
-  authedItemId: Scalars['ID']['output'];
   dv: Scalars['Int']['output'];
+  fileClientId: Scalars['String']['output'];
   modelNames: Array<Scalars['String']['output']>;
   sender: FileSender;
-  sourceAppId?: Maybe<Scalars['String']['output']>;
+  sourceFileClientId?: Maybe<Scalars['String']['output']>;
+  userId: Scalars['ID']['output'];
 };
 
 export type FileRecordWhereInput = {
   AND?: InputMaybe<Array<InputMaybe<FileRecordWhereInput>>>;
   OR?: InputMaybe<Array<InputMaybe<FileRecordWhereInput>>>;
+  attachments?: InputMaybe<Scalars['JSON']['input']>;
+  attachments_in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  attachments_not?: InputMaybe<Scalars['JSON']['input']>;
+  attachments_not_in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
   createdAt?: InputMaybe<Scalars['String']['input']>;
   createdAt_gt?: InputMaybe<Scalars['String']['input']>;
   createdAt_gte?: InputMaybe<Scalars['String']['input']>;
