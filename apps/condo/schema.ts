@@ -27946,6 +27946,8 @@ export type FileRecord = {
   fileMeta?: Maybe<FileRecordMeta>;
   id: Scalars['ID']['output'];
   newId?: Maybe<Scalars['String']['output']>;
+  /**  Organization of the user who uploaded the file  */
+  organization?: Maybe<Organization>;
   /**  Client-side device identification used for the anti-fraud detection. Example `{ "dv":1, "fingerprint":"VaxSw2aXZa"}`. Where the `fingerprint` should be the same for the same devices and it's not linked to the user ID. It's the device ID like browser / mobile application / remote system  */
   sender?: Maybe<SenderField>;
   /**  App id - used for final routing when original file was shared  */
@@ -27969,6 +27971,7 @@ export type FileRecordCreateInput = {
   fileAdapter?: InputMaybe<Scalars['String']['input']>;
   fileMeta?: InputMaybe<Scalars['JSON']['input']>;
   newId?: InputMaybe<Scalars['String']['input']>;
+  organization?: InputMaybe<OrganizationRelateToOneInput>;
   sender?: InputMaybe<SenderFieldInput>;
   sourceApp?: InputMaybe<Scalars['String']['input']>;
   sourceFileRecord?: InputMaybe<FileRecordRelateToOneInput>;
@@ -28001,6 +28004,7 @@ export type FileRecordHistoryRecord = {
   history_id?: Maybe<Scalars['String']['output']>;
   id: Scalars['ID']['output'];
   newId?: Maybe<Scalars['JSON']['output']>;
+  organization?: Maybe<Scalars['String']['output']>;
   sender?: Maybe<Scalars['JSON']['output']>;
   sourceApp?: Maybe<Scalars['String']['output']>;
   sourceFileRecord?: Maybe<Scalars['String']['output']>;
@@ -28022,6 +28026,7 @@ export type FileRecordHistoryRecordCreateInput = {
   history_date?: InputMaybe<Scalars['String']['input']>;
   history_id?: InputMaybe<Scalars['String']['input']>;
   newId?: InputMaybe<Scalars['JSON']['input']>;
+  organization?: InputMaybe<Scalars['String']['input']>;
   sender?: InputMaybe<Scalars['JSON']['input']>;
   sourceApp?: InputMaybe<Scalars['String']['input']>;
   sourceFileRecord?: InputMaybe<Scalars['String']['input']>;
@@ -28049,6 +28054,7 @@ export type FileRecordHistoryRecordUpdateInput = {
   history_date?: InputMaybe<Scalars['String']['input']>;
   history_id?: InputMaybe<Scalars['String']['input']>;
   newId?: InputMaybe<Scalars['JSON']['input']>;
+  organization?: InputMaybe<Scalars['String']['input']>;
   sender?: InputMaybe<Scalars['JSON']['input']>;
   sourceApp?: InputMaybe<Scalars['String']['input']>;
   sourceFileRecord?: InputMaybe<Scalars['String']['input']>;
@@ -28139,6 +28145,10 @@ export type FileRecordHistoryRecordWhereInput = {
   newId_in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
   newId_not?: InputMaybe<Scalars['JSON']['input']>;
   newId_not_in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  organization?: InputMaybe<Scalars['String']['input']>;
+  organization_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  organization_not?: InputMaybe<Scalars['String']['input']>;
+  organization_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   sender?: InputMaybe<Scalars['JSON']['input']>;
   sender_in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
   sender_not?: InputMaybe<Scalars['JSON']['input']>;
@@ -28217,6 +28227,11 @@ export type FileRecordMeta = {
   recordId?: Maybe<Scalars['ID']['output']>;
 };
 
+export type FileRecordMetaUser = {
+  __typename?: 'FileRecordMetaUser';
+  id: Scalars['ID']['output'];
+};
+
 export type FileRecordRelateToOneInput = {
   connect?: InputMaybe<FileRecordWhereUniqueInput>;
   create?: InputMaybe<FileRecordCreateInput>;
@@ -28233,6 +28248,7 @@ export type FileRecordUpdateInput = {
   fileAdapter?: InputMaybe<Scalars['String']['input']>;
   fileMeta?: InputMaybe<Scalars['JSON']['input']>;
   newId?: InputMaybe<Scalars['String']['input']>;
+  organization?: InputMaybe<OrganizationRelateToOneInput>;
   sender?: InputMaybe<SenderFieldInput>;
   sourceApp?: InputMaybe<Scalars['String']['input']>;
   sourceFileRecord?: InputMaybe<FileRecordRelateToOneInput>;
@@ -28249,7 +28265,7 @@ export type FileRecordUserMeta = {
   modelNames: Array<Scalars['String']['output']>;
   sender: FileSender;
   sourceFileClientId?: Maybe<Scalars['String']['output']>;
-  userId: Scalars['ID']['output'];
+  user: FileRecordMetaUser;
 };
 
 export type FileRecordWhereInput = {
@@ -28315,6 +28331,8 @@ export type FileRecordWhereInput = {
   newId_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   newId_not?: InputMaybe<Scalars['String']['input']>;
   newId_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  organization?: InputMaybe<OrganizationWhereInput>;
+  organization_is_null?: InputMaybe<Scalars['Boolean']['input']>;
   sender?: InputMaybe<SenderFieldInput>;
   sender_in?: InputMaybe<Array<InputMaybe<SenderFieldInput>>>;
   sender_not?: InputMaybe<SenderFieldInput>;
@@ -89790,6 +89808,8 @@ export enum SortFileRecordsBy {
   FileAdapterDesc = 'fileAdapter_DESC',
   IdAsc = 'id_ASC',
   IdDesc = 'id_DESC',
+  OrganizationAsc = 'organization_ASC',
+  OrganizationDesc = 'organization_DESC',
   SourceAppAsc = 'sourceApp_ASC',
   SourceAppDesc = 'sourceApp_DESC',
   SourceFileRecordAsc = 'sourceFileRecord_ASC',
